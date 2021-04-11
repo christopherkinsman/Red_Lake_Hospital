@@ -1,4 +1,4 @@
-### Red Lake Hospital Project
+# Red Lake Hospital Project
 ## Nai-Hsien's Contributions - Online donation feature
 ### Models 
 Models/Donation.cs <br />
