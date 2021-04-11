@@ -36,3 +36,27 @@ JobPostingsViewModel.cs <br />
 
 ### Views
 All views inside /Views/JobView directory
+
+
+## Kunal's Contributions - Contact Us and Send E-cards Features
+
+### Controllers
+ContactsController.cs <br />
+ContactsDataController.cs <br />
+EcardsController.cs <br />
+EcardsDataController.cs <br />
+
+### Models and ViewModels
+Contacts.cs <br />
+Ecards.cs <br />
+ShowContact.cs <br />
+UpdateContact.cs <br />
+ListContact.cs <br />
+ShowEcard.cs <br />
+EditEcard.cs <br />
+
+### Views
+## Views for Contact Us
+All views inside /Views/Contact directory
+## Views for E-cards
+All views inside /Views/Ecards directory
