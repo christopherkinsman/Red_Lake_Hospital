@@ -181,8 +181,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\ContactsDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
+    <Compile Include="Controllers\EcardsController.cs" />
+    <Compile Include="Controllers\EcardsDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsApiController.cs" />
     <Compile Include="Controllers\JobsViewController.cs" />
@@ -226,6 +230,14 @@
     <Compile Include="Migrations\202104102340583_Add_models_from_team_members_to_db.Designer.cs">
       <DependentUpon>202104102340583_Add_models_from_team_members_to_db.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104110339274_Contact Us Feature - Kunal Sailor.cs" />
+    <Compile Include="Migrations\202104110339274_Contact Us Feature - Kunal Sailor.Designer.cs">
+      <DependentUpon>202104110339274_Contact Us Feature - Kunal Sailor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104111519080_E-cards Feature - Kunal Sailor.cs" />
+    <Compile Include="Migrations\202104111519080_E-cards Feature - Kunal Sailor.Designer.cs">
+      <DependentUpon>202104111519080_E-cards Feature - Kunal Sailor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogModel.cs" />
@@ -233,6 +245,7 @@
     <Compile Include="Models\DepartmentsModel.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
+    <Compile Include="Models\Ecards.cs" />
     <Compile Include="Models\Faq.cs" />
     <Compile Include="Models\FeedbackModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -241,11 +254,13 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\ViewModels\EditEcard.cs" />
     <Compile Include="Models\ViewModels\JobApplicationViewModel.cs" />
     <Compile Include="Models\ViewModels\JobPostingsViewModel.cs" />
     <Compile Include="Models\ViewModels\ListContact.cs" />
     <Compile Include="Models\ViewModels\ListPhotos.cs" />
     <Compile Include="Models\ViewModels\ShowContact.cs" />
+    <Compile Include="Models\ViewModels\ShowEcard.cs" />
     <Compile Include="Models\ViewModels\UpdateContact.cs" />
     <Compile Include="Models\ViewModels\UpdateFaq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,6 +346,16 @@
     <Content Include="Views\Donation\Edit.cshtml" />
     <Content Include="Views\Donation\Index.cshtml" />
     <Content Include="Views\Donation\List.cshtml" />
+    <Content Include="Views\Contacts\List.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Ecards\List.cshtml" />
+    <Content Include="Views\Ecards\Edit.cshtml" />
+    <Content Include="Views\Ecards\Delete.cshtml" />
+    <Content Include="Views\Ecards\Create.cshtml" />
+    <Content Include="Views\Ecards\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,6 +402,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104102340583_Add_models_from_team_members_to_db.resx">
       <DependentUpon>202104102340583_Add_models_from_team_members_to_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104110339274_Contact Us Feature - Kunal Sailor.resx">
+      <DependentUpon>202104110339274_Contact Us Feature - Kunal Sailor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111519080_E-cards Feature - Kunal Sailor.resx">
+      <DependentUpon>202104111519080_E-cards Feature - Kunal Sailor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

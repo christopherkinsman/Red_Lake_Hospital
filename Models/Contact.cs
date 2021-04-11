@@ -12,15 +12,15 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         [Key]
         public int contact_id { get; set; }
 
-        public string contact_fname { get; set; }
+        public string Firstname { get; set; }
 
-        public string contact_lname { get; set; }
+        public string Lastname { get; set; }
 
-        public string contact_email { get; set; }
+        public string Email { get; set; }
 
-        public string contact_phone { get; set; }
+        public string Phone { get; set; }
         
-        public string contact_message { get; set; }
+        public string Message { get; set; }
 
 
         [ForeignKey("Department")]
@@ -36,15 +36,15 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
     {
         public int contact_id { get; set; }
 
-        public string contact_fname { get; set; }
+        public string Firstname { get; set; }
 
-        public string contact_lname { get; set; }
+        public string Lastname { get; set; }
 
-        public string contact_email { get; set; }
+        public string Email { get; set; }
 
-        public string contact_phone { get; set; }
+        public string Phone { get; set; }
 
-        public string contact_message { get; set; }
+        public string Message { get; set; }
 
         public int DepartmentId { get; set; }
 

@@ -44,5 +44,6 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Contact> Contacts { get; set; }
 
+        public System.Data.Entity.DbSet<Red_Lake_Hospital_Redesign_Team6.Models.Ecards> Ecards { get; set; }
     }
 }

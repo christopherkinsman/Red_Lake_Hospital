@@ -20,6 +20,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public ICollection<JobPostingsModel> JobPostings { get; set; }
         public ICollection<Testimonial> Testimonials { get; set; }
         public ICollection<Contact> Contact { get; set; }
+        public ICollection<Ecards> Ecards { get; set; }
 
     }
 
