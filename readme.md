@@ -18,3 +18,21 @@
     - Solving merging conflict
       - see https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#removed-file-merge-conflicts
       - see also project folder: documentation.pdf
+
+
+## Gord's Contributions - Job Posting and Job Application Features
+
+### Controllers
+Set up role and users <br />
+JobsApiController.cs <br />
+JobsViewController.cs <br />
+
+### Models and ViewModels
+DepartmentsModel.cs <br />
+JobApplicationsModel.cs <br />
+JobPostingsModel.cs <br />
+JobApplicationViewModel.cs <br />
+JobPostingsViewModel.cs <br />
+
+### Views
+All views inside /Views/JobView directory
