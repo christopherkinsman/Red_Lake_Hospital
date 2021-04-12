@@ -14,10 +14,10 @@ Views/Donation/Edit.cshtml (not currently functioning) <br />
 
 ### Debugging:
 Solving merging conflict <br />
-- see https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#removed-file-merge-conflicts
-- see also project folder: documentation.pdf <br />
+  - see https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#removed-file-merge-conflicts
+  - see also project folder: documentation.pdf
 Understanding how to work with git.ignore <br />
-- see https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio#ignore-files-only-on-your-system
+  - see https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio#ignore-files-only-on-your-system
 
 ## Gord's Contributions - Job Posting and Job Application Features
 
