@@ -181,12 +181,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogApiController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ContactsDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
     <Compile Include="Controllers\EcardsController.cs" />
     <Compile Include="Controllers\EcardsDataController.cs" />
+    <Compile Include="Controllers\FeedbackApiController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsApiController.cs" />
     <Compile Include="Controllers\JobsViewController.cs" />
@@ -259,10 +263,14 @@
     <Compile Include="Models\ViewModels\JobPostingsViewModel.cs" />
     <Compile Include="Models\ViewModels\ListContact.cs" />
     <Compile Include="Models\ViewModels\ListPhotos.cs" />
+    <Compile Include="Models\ViewModels\ShowBlogViewModel.cs" />
     <Compile Include="Models\ViewModels\ShowContact.cs" />
     <Compile Include="Models\ViewModels\ShowEcard.cs" />
+    <Compile Include="Models\ViewModels\ShowFeedbackViewModel.cs" />
+    <Compile Include="Models\ViewModels\UpdateBlogViewModel.cs" />
     <Compile Include="Models\ViewModels\UpdateContact.cs" />
     <Compile Include="Models\ViewModels\UpdateFaq.cs" />
+    <Compile Include="Models\ViewModels\UpdateFeedbackViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -356,11 +364,29 @@
     <Content Include="Views\Ecards\Delete.cshtml" />
     <Content Include="Views\Ecards\Create.cshtml" />
     <Content Include="Views\Ecards\Details.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\Show.cshtml" />
+    <Content Include="Views\Blog\Create.cshtml" />
+    <Content Include="Views\Blog\Update.cshtml" />
+    <Content Include="Views\Blog\DeleteConfirm.cshtml" />
+    <Content Include="Views\Blog\AdminList.cshtml" />
+    <Content Include="Views\Blog\AdminShow.cshtml" />
+    <Content Include="Views\Feedback\List.cshtml" />
+    <Content Include="Views\Feedback\Show.cshtml" />
+    <Content Include="Views\Feedback\Create.cshtml" />
+    <Content Include="Views\Feedback\Update.cshtml" />
+    <Content Include="Views\Feedback\DeleteConfirm.cshtml" />
+    <Content Include="Views\Feedback\AdminList.cshtml" />
+    <Content Include="Views\Feedback\AdminShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CvPackages\" />
+    <Folder Include="Views\BlogApi\" />
+    <Folder Include="Views\FeedbackApi\" />
     <Folder Include="Views\JobsApi\" />
+    <Folder Include="Views\ShowFeedbackViewModel\" />
+    <Folder Include="Views\UpdateFeedbackViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
