@@ -58,4 +58,31 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public ICollection<Donation> Donations { get; set; }
 
     }
+
+    public class DonorDto
+    {
+        public int DonorId { get; set; }
+        [DisplayName("Email")]
+        public string Email { get; set; }
+        [DisplayName("Type")]
+        public string Type { get; set; }
+        [DisplayName("OrgName")]
+        public string OrgName { get; set; }
+        [DisplayName("Fname")]
+        public string Fname { get; set; }
+        [DisplayName("Lname")]
+        public string Lname { get; set; }
+        [DisplayName("Addressl1")]
+        public string Addressl1 { get; set; }
+        [DisplayName("Addressl2")]
+        public string Addressl2 { get; set; }
+        [DisplayName("City")]
+        public string City { get; set; }
+        [DisplayName("Country")]
+        public string Country { get; set; }
+        [DisplayName("Province")]
+        public string Province { get; set; }
+        [DisplayName("PostalCode")]
+        public string PostalCode { get; set; }
+    }
 }

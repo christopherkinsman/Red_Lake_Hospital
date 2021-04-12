@@ -64,7 +64,29 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         // GET: Donation/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            ShowDonation ViewModel = new ShowDonation();
+            string url = "donationdata/finddonation/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                //Put data into donation data transfer object
+                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
+                ViewModel.Donation = SelectedDonation;
+
+
+                url = "donationdata/finddonorfordonation/" + id;
+                response = client.GetAsync(url).Result;
+                DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
+                ViewModel.Donor = SelectedDonor;
+
+                return View(ViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
 /*
         // GET: Donation/Create

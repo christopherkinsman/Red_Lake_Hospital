@@ -254,6 +254,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\ViewModels\ShowDonation.cs" />
     <Compile Include="Models\ViewModels\EditEcard.cs" />
     <Compile Include="Models\ViewModels\JobApplicationViewModel.cs" />
     <Compile Include="Models\ViewModels\JobPostingsViewModel.cs" />
@@ -342,7 +343,6 @@
     <Content Include="Views\JobsView\adminJobPostingDelete.cshtml" />
     <Content Include="Views\JobsView\adminJobPostingDeleteConfirmed.cshtml" />
     <Content Include="Views\JobsView\jobSearch.cshtml" />
-    <Content Include="Views\Donation\Details.cshtml" />
     <Content Include="Views\Donation\Edit.cshtml" />
     <Content Include="Views\Donation\Index.cshtml" />
     <Content Include="Views\Donation\List.cshtml" />
@@ -356,6 +356,7 @@
     <Content Include="Views\Ecards\Delete.cshtml" />
     <Content Include="Views\Ecards\Create.cshtml" />
     <Content Include="Views\Ecards\Details.cshtml" />
+    <Content Include="Views\Donation\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

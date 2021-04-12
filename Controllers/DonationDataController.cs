@@ -45,7 +45,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [ResponseType(typeof(IEnumerable<DonationDto>))]
         public IHttpActionResult GetDonations()
         {
-            List<Donation> Donations = db.Donations.ToList();
+            //List<Donation> Donations = db.Donations.ToList();
+            IEnumerable<Donation> Donations = db.Donations.ToList();
             List<DonationDto> DonationDtos = new List<DonationDto> { };
 
             //Here you can choose which information is exposed to the API
@@ -74,97 +75,159 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
 
 
-        // GET: api/DonationData/5
-        [ResponseType(typeof(Donation))]
-        public IHttpActionResult GetDonation(int id)
+        // GET: api/DonationData/FindDonation/5
+        [HttpGet]
+        [ResponseType(typeof(DonationDto))]
+        public IHttpActionResult FindDonation(int id)
         {
-            Donation donation = db.Donations.Find(id);
-            if (donation == null)
+            //find donation data
+            Donation Donation = db.Donations.Find(id);
+            if (Donation == null)
             {
                 return NotFound();
             }
 
-            return Ok(donation);
+            //Put into Dto form
+
+            DonationDto DonationDto = new DonationDto
+            {
+                DonationId = Donation.DonationId,
+                Date = Donation.Date,
+                Amount = Donation.Amount,
+                OneTime = Donation.OneTime,
+                Msg = Donation.Msg,
+                Dedication = Donation.Dedication,
+                DedicateName = Donation.DedicateName,
+                Action = Donation.Action,
+                Anonymity = Donation.Anonymity,
+                PaymentMethod = Donation.PaymentMethod,
+                PaymentNumber = Donation.PaymentNumber,
+                DonorId = Donation.DonorId
+            };
+
+            return Ok(DonationDto);
         }
 
-        // PUT: api/DonationData/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutDonation(int id, Donation donation)
+        [HttpGet]
+        [ResponseType(typeof(DonorDto))]
+        public IHttpActionResult FindDonorForDonation(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != donation.DonationId)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(donation).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DonationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/DonationData
-        [ResponseType(typeof(Donation))]
-        public IHttpActionResult PostDonation(Donation donation)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Donations.Add(donation);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = donation.DonationId }, donation);
-        }
-
-        // DELETE: api/DonationData/5
-        [ResponseType(typeof(Donation))]
-        public IHttpActionResult DeleteDonation(int id)
-        {
-            Donation donation = db.Donations.Find(id);
-            if (donation == null)
+            //Finds the first team which has any players
+            //that match the input playerid
+            Donor Donor = db.Donors
+                .Where(dn => dn.Donations.Any(dnt => dnt.DonationId == id))
+                .FirstOrDefault();
+            //if not found, return 404 status code.
+            if (Donor == null)
             {
                 return NotFound();
             }
 
-            db.Donations.Remove(donation);
-            db.SaveChanges();
-
-            return Ok(donation);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            //put into a 'friendly object format'
+            DonorDto DonorDto = new DonorDto
             {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+                DonorId = Donor.DonorId,
+                Email = Donor.Email,
+                Type = Donor.Type,
+                OrgName = Donor.OrgName,
+                Fname = Donor.Fname,
+                Lname = Donor.Lname,
+                Addressl1 = Donor.Addressl1,
+                Addressl2 = Donor.Addressl2,
+                City = Donor.City,
+                Country = Donor.Country,
+                Province = Donor.Province,
+                PostalCode = Donor.PostalCode
+            };
+
+            //pass along data as 200 status code OK response
+            return Ok(DonorDto);
         }
 
-        private bool DonationExists(int id)
-        {
-            return db.Donations.Count(e => e.DonationId == id) > 0;
-        }
+
+
+
+
+
+        /*
+                // PUT: api/DonationData/5
+                [ResponseType(typeof(void))]
+                public IHttpActionResult PutDonation(int id, Donation donation)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
+
+                    if (id != donation.DonationId)
+                    {
+                        return BadRequest();
+                    }
+
+                    db.Entry(donation).State = EntityState.Modified;
+
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!DonationExists(id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+
+                    return StatusCode(HttpStatusCode.NoContent);
+                }
+
+                // POST: api/DonationData
+                [ResponseType(typeof(Donation))]
+                public IHttpActionResult PostDonation(Donation donation)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
+
+                    db.Donations.Add(donation);
+                    db.SaveChanges();
+
+                    return CreatedAtRoute("DefaultApi", new { id = donation.DonationId }, donation);
+                }
+
+                // DELETE: api/DonationData/5
+                [ResponseType(typeof(Donation))]
+                public IHttpActionResult DeleteDonation(int id)
+                {
+                    Donation donation = db.Donations.Find(id);
+                    if (donation == null)
+                    {
+                        return NotFound();
+                    }
+
+                    db.Donations.Remove(donation);
+                    db.SaveChanges();
+
+                    return Ok(donation);
+                }
+
+                protected override void Dispose(bool disposing)
+                {
+                    if (disposing)
+                    {
+                        db.Dispose();
+                    }
+                    base.Dispose(disposing);
+                }
+
+                private bool DonationExists(int id)
+                {
+                    return db.Donations.Count(e => e.DonationId == id) > 0;
+                }*/
     }
 }

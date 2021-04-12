@@ -1,98 +1,79 @@
-﻿@model Red_Lake_Hospital_Redesign_Team6.Models.Donation
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.ShowDonation
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Donation</h2>
 
 <div>
-    <h4>Donation</h4>
+    <h4>Show donation details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.DisplayNameFor(model => model.Donation.Date)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.Donation.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Donation.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Donation.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Donation.OneTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Donation.OneTime)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Amount)
+            @Html.DisplayNameFor(model => model.Donation.Dedication)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Amount)
+            @Html.DisplayFor(model => model.Donation.Dedication)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.OneTime)
+            @Html.DisplayNameFor(model => model.Donation.DedicateName)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.OneTime)
+            @Html.DisplayFor(model => model.Donation.DedicateName)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Msg)
+            @Html.DisplayNameFor(model => model.Donation.Action)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Msg)
+            @Html.DisplayFor(model => model.Donation.Action)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Dedication)
+            @Html.DisplayNameFor(model => model.Donation.Anonymity)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Dedication)
+            @Html.DisplayFor(model => model.Donation.Anonymity)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DedicateName)
+            @Html.DisplayNameFor(model => model.Donation.PaymentMethod)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DedicateName)
+            @Html.DisplayFor(model => model.Donation.PaymentMethod)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Action)
+            @Html.DisplayNameFor(model => model.Donation.PaymentNumber)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Action)
+            @Html.DisplayFor(model => model.Donation.PaymentNumber)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Anonymity)
+            @Html.DisplayNameFor(model => model.Donation.DonorId)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Anonymity)
+            @Html.DisplayFor(model => model.Donation.DonorId)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaymentMethod)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaymentMethod)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaymentNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaymentNumber)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DonationId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Donation.DonationId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
