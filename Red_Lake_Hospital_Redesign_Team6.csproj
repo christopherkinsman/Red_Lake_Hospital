@@ -185,6 +185,8 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ContactsDataController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DepartmentDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
     <Compile Include="Controllers\EcardsController.cs" />
@@ -195,6 +197,8 @@
     <Compile Include="Controllers\JobsApiController.cs" />
     <Compile Include="Controllers\JobsViewController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
+    <Compile Include="Controllers\TestimonialDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +262,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\ViewModels\DepartmentDetails.cs" />
     <Compile Include="Models\ViewModels\ShowDonation.cs" />
     <Compile Include="Models\ViewModels\EditEcard.cs" />
     <Compile Include="Models\ViewModels\JobApplicationViewModel.cs" />
@@ -268,6 +273,7 @@
     <Compile Include="Models\ViewModels\ShowContact.cs" />
     <Compile Include="Models\ViewModels\ShowEcard.cs" />
     <Compile Include="Models\ViewModels\ShowFeedbackViewModel.cs" />
+    <Compile Include="Models\ViewModels\TestimonialDetails.cs" />
     <Compile Include="Models\ViewModels\UpdateBlogViewModel.cs" />
     <Compile Include="Models\ViewModels\UpdateContact.cs" />
     <Compile Include="Models\ViewModels\UpdateFaq.cs" />
@@ -379,6 +385,16 @@
     <Content Include="Views\Feedback\AdminList.cshtml" />
     <Content Include="Views\Feedback\AdminShow.cshtml" />
     <Content Include="Views\Donation\Details.cshtml" />
+    <Content Include="Views\Testimonial\Create.cshtml" />
+    <Content Include="Views\Testimonial\DeleteConfirm.cshtml" />
+    <Content Include="Views\Testimonial\Error.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\DeleteConfirm.cshtml" />
+    <Content Include="Views\Department\DetailsofDepartment.cshtml" />
+    <Content Include="Views\Department\Error.cshtml" />
+    <Content Include="Views\Department\ListDepartments.cshtml" />
+    <Content Include="Views\Department\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

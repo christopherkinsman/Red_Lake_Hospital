@@ -59,3 +59,23 @@ EditEcard.cs <br />
 All views inside /Views/Contact directory
 ## Views for E-cards
 All views inside /Views/Ecards directory
+
+## Jerrin's Contributions - Department and Testimonial Features
+
+### Controllers
+
+TestimonialDataController.cs <br />
+TestimonialController <br />
+DepartmentDataController.cs <br />
+DepartmentController.cs <br />
+
+### Models and ViewModels
+
+ViewModels - DepartmentDetails.cs, TestimonialDetails.cs
+Models - Testimonial.cs, DepartmentsModel.cs
+
+### Views
+## Views for Department
+All views inside /Views/Department directory
+## Views for Testimonial
+All views inside /Views/Testimonial directory

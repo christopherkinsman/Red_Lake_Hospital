@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\Jerrin Eldo\\source\\repos\\Red_Lake_Hospital_Project_ver2_Team6\\Red_Lake_Hospital_Redesign_Team6.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

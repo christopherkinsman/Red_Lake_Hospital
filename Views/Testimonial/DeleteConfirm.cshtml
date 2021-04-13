@@ -1,0 +1,29 @@
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.TestimonialDetails
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+
+<h3>Are you sure you want to delete this Testimonial of Department : @Model.DepartmentDto.DepartmentName?</h3>
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.TestimonialDto.first_Name) :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TestimonialDto.first_Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TestimonialDto.testimonial_Content) :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TestimonialDto.testimonial_Content)
+        </dd>
+    </dl>
+    <form action="DeleteTestimonial" method="POST">
+        <input type="hidden" name="TestimonialId" value="@Model.TestimonialDto.testimonial_Id" />
+        <input type="hidden" name="DepartmentId" value="@Model.DepartmentDto.DepartmentId" />
+        <input type="submit" value="Delete" />
+    </form>
+    @Html.ActionLink("Back to Department Details", "DetailsofDepartment", "Department", new { Id = Model.DepartmentDto.DepartmentId }, null)
+</div>

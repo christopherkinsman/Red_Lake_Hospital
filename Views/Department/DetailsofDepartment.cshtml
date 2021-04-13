@@ -1,0 +1,24 @@
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.DepartmentDetails
+@{
+    ViewBag.Title = "DetailsofDepartment";
+}
+
+<p>Department :<h2>@Model.DepartmentDto.DepartmentName</h2></p>
+
+@Html.ActionLink("Create New Testimonial", "Create", "Testimonial", new { id = Model.DepartmentDto.DepartmentId }, null)
+
+@foreach (var testimonial in Model.Testimonials)
+{
+    <div>
+        <p>Testimonial Content:@testimonial.testimonial_Content</p>
+        @Html.ActionLink("Edit", "UpdateTestimonial", "Testimonial", new { TestimonialId = testimonial.testimonial_Id, DepartmentId = Model.DepartmentDto.DepartmentId }, null) |
+        @*@Html.ActionLink("Details", "DetailsofDepartment", "Department", new { id = testimonial.testimonial_Id }, null) |*@
+        @Html.ActionLink("Delete", "DeleteConfirm", "Testimonial", new { DepartmentId = Model.DepartmentDto.DepartmentId, TestimonialId = testimonial.testimonial_Id }, null)
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Departments", "ListDepartments", "Department", null)
+</div>
+
+
