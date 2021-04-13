@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Red_Lake_Hospital_Redesign_Team6.Models.Photo>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo_path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photographer_fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photographer_lname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photo_path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photographer_fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photographer_lname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.photo_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.photo_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.photo_id })
+        </td>
+    </tr>
+}
+
+</table>
