@@ -79,3 +79,29 @@ Models - Testimonial.cs, DepartmentsModel.cs
 All views inside /Views/Department directory
 ## Views for Testimonial
 All views inside /Views/Testimonial directory
+
+
+## Braydons's Contributions - FAQ and Photos
+
+### Controllers
+FaqDataController.cs <br />
+FaqController.cs <br />
+PhotoDataController.cs <br />
+PhotoController.cs <br />
+DepartmentsDataController.cs
+
+### Models and ViewModels
+Faq.cs <br />
+Phot.cs <br />
+ListFaq.cs <br />
+ListPhoto.cs <br />
+ShowFaq.cs <br />
+ShowPhoto.cs <br />
+UpdatePhoto.cs <br />
+UpdateFaq.cs <br />
+
+### Views
+## Views for Faq
+All views inside /Views/Faq directory
+## Views for Photos
+All views inside /Views/Photo directory
