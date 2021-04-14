@@ -200,6 +200,7 @@
     <Compile Include="Controllers\JobsApiController.cs" />
     <Compile Include="Controllers\JobsViewController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\PhotoDataController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Controllers\TestimonialDataController.cs" />
