@@ -6,11 +6,14 @@ Models/Donor.cs <br />
 ### Controllers
 Controllers/DonationDataController.cs <br />
 Controllers/DonationController.cs <br />
+Controllers/DonationDataController.cs <br />
 ### Views
-Views/Donation/Index.cshtml <br />
+~~Views/Donation/Index.cshtml~~ <br />
 Views/Donation/List.cshtml <br />
 Views/Donation/Details.cshtml <br />
-Views/Donation/Edit.cshtml (not currently functioning) <br />
+Views/Donation/Edit.cshtml (not currently fully functioning) <br />
+Views/Donation/DeleteConfirm.cshtml<br />
+Views/Donation/Create.cshtml <br />
 
 ### Debugging:
 1. Solving merging conflict <br />
