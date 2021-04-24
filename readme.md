@@ -6,14 +6,12 @@ Models/Donor.cs <br />
 ### Controllers
 Controllers/DonationDataController.cs <br />
 Controllers/DonationController.cs <br />
-Controllers/DonationDataController.cs <br />
+Controllers/DonorDataController.cs <br />
 ### Views
-~~Views/Donation/Index.cshtml~~ <br />
-Views/Donation/List.cshtml <br />
-Views/Donation/Details.cshtml <br />
+all the views under donation and donor folders. Several are not currently functioning:
 Views/Donation/Edit.cshtml (not currently fully functioning) <br />
-Views/Donation/DeleteConfirm.cshtml<br />
-Views/Donation/Create.cshtml <br />
+Views/Donor/Edit.cshtml (not currently fully functioning) <br />
+Views/Donor/DeleteConfirm.cshtml (not currently fully functioning) <br />
 
 ### Debugging:
 1. Solving merging conflict <br />
