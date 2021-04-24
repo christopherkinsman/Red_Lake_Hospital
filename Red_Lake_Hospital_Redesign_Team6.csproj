@@ -369,7 +369,6 @@
     <Content Include="Views\JobsView\adminJobPostingDelete.cshtml" />
     <Content Include="Views\JobsView\adminJobPostingDeleteConfirmed.cshtml" />
     <Content Include="Views\JobsView\jobSearch.cshtml" />
-    <Content Include="Views\Donation\Edit.cshtml" />
     <Content Include="Views\Donation\List.cshtml" />
     <Content Include="Views\Contacts\List.cshtml" />
     <Content Include="Views\Contacts\Delete.cshtml" />
@@ -420,10 +419,10 @@
     <Content Include="Views\Donation\DeleteConfirm.cshtml" />
     <Content Include="Views\Donor\Create.cshtml" />
     <Content Include="Views\Donor\Edit.cshtml" />
-    <Content Include="Views\Donor\Index.cshtml" />
     <Content Include="Views\Donor\List.cshtml" />
     <Content Include="Views\Donor\DeleteConfirm.cshtml" />
     <Content Include="Views\Donor\Details.cshtml" />
+    <Content Include="Views\Donation\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
