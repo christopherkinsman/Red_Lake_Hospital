@@ -10,7 +10,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models.ViewModels
     {
         //Information about the donation
         public DonationDto donation { get; set; }
-        //Needed for a dropdownlist which presents the donation with a choice of donors. (Do I need this???)
+        //Needed for a dropdownlist which presents the donation with a choice of donors.
+        //(Do I need this???)
         public IEnumerable<DonorDto> alldonors { get; set; }
+        //Needed for displaying a donor's name
+        public DonorDto donor { get; set; }
     }
 }

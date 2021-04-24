@@ -13,7 +13,7 @@ using System.Web.Script.Serialization;
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
-    public class DonationController : Controller
+    public class DonorController : Controller
     {
         //Http Client is the proper way to connect to a webapi
         //https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0
@@ -21,7 +21,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         private JavaScriptSerializer jss = new JavaScriptSerializer();
         private static readonly HttpClient client;
 
-        static DonationController()
+        static DonorController()
         {
             HttpClientHandler handler = new HttpClientHandler()
             {
@@ -35,22 +35,22 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
             //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ACCESS_TOKEN);
         }
-        
-        // GET: Donation
+
+        // GET: Donor
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Donation/List
+        // GET: Donor/List
         public ActionResult List()
         {
-            string url = "donationdata/getdonations";
+            string url = "donordata/getdonors";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
-                IEnumerable<DonationDto> SelectedDonations = response.Content.ReadAsAsync<IEnumerable<DonationDto>>().Result;
-                return View(SelectedDonations);
+                IEnumerable<DonorDto> SelectedDonors = response.Content.ReadAsAsync<IEnumerable<DonorDto>>().Result;
+                return View(SelectedDonors);
             }
             else
             {
@@ -58,28 +58,20 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
-
-        // GET: Donation/Details/5
-        public ActionResult Details(int id)
+        // GET: Donor/Details/5
+        public ActionResult Details(int? id)
         {
-            ShowDonation ViewModel = new ShowDonation();
-            string url = "donationdata/finddonation/" + id;
+            string url = "donordata/finddonor/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             //Can catch the status code (200 OK, 301 REDIRECT), etc.
             //Debug.WriteLine(response.StatusCode);
             if (response.IsSuccessStatusCode)
             {
-                //Put data into donation data transfer object
-                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
-                ViewModel.donation = SelectedDonation;
-
-
-                url = "donationdata/finddonorfordonation/" + id;
-                response = client.GetAsync(url).Result;
+                //Put data into donor data transfer object
+                //Q: DO I NEED A VIEWMODEL HERE?
                 DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
-                ViewModel.donor = SelectedDonor;
 
-                return View(ViewModel);
+                return View(SelectedDonor);
             }
             else
             {
@@ -87,28 +79,30 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
-        // GET: Donation/Create
+        // GET: Donor/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Donation/Create
+        // POST: Donor/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //authorized role needed
-        public ActionResult Create(Donation DonationInfo)
+        [ValidateAntiForgeryToken()]
+        public ActionResult Create(Donor DonorInfo)
         {
-            Debug.WriteLine(DonationInfo.DonationId);
-            string url = "donationdata/adddonation";
-            Debug.WriteLine(jss.Serialize(DonationInfo));
-            HttpContent content = new StringContent(jss.Serialize(DonationInfo));
+            Debug.WriteLine(DonorInfo.Fname);
+            string url = "donordata/adddonor";
+            Debug.WriteLine(jss.Serialize(DonorInfo));
+            HttpContent content = new StringContent(jss.Serialize(DonorInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
 
-            if (response.IsSuccessStatusCode)
+            if (ModelState.IsValid)
             {
-                int donationid = response.Content.ReadAsAsync<int>().Result;
-                return RedirectToAction("Details", new { id = donationid });
+                int donorid = response.Content.ReadAsAsync<int>().Result;
+                return RedirectToAction("Details", new { id = donorid });
             }
             else
             {
@@ -116,28 +110,18 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
         
-        // GET: Donation/Edit/5
+        // GET: Donor/Edit/5
         public ActionResult Edit(int id)
         {
-            UpdateDonation ViewModel = new UpdateDonation();
-
-            string url = "donationdata/finddonation/" + id;
+            string url = "donordata/finddonor/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             //Can catch the status code (200 OK, 301 REDIRECT), etc.
             //Debug.WriteLine(response.StatusCode);
             if (response.IsSuccessStatusCode)
             {
-                //Put data into donation data transfer object
-                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
-                ViewModel.donation = SelectedDonation;
-
-                //get information about donors which could make this donation.
-                url = "donordata/getdonors";
-                response = client.GetAsync(url).Result;
-                IEnumerable<DonorDto> PotentialDonors = response.Content.ReadAsAsync<IEnumerable<DonorDto>>().Result;
-                ViewModel.alldonors = PotentialDonors;
-
-                return View(ViewModel);
+                //Put data into player data transfer object
+                DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
+                return View(SelectedDonor);
             }
             else
             {
@@ -145,18 +129,20 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
-        // POST: Donation/Edit/5
+        // POST: Donor/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //validate token goes here
-        public ActionResult Edit(int id, Donation DonationInfo)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Donor DonorInfo)
         {
-            Debug.WriteLine(DonationInfo.DonationId);
-            string url = "donationdata/updatedontaion/" + id;
-            Debug.WriteLine(jss.Serialize(DonationInfo));
-            HttpContent content = new StringContent(jss.Serialize(DonationInfo));
+            Debug.WriteLine(DonorInfo.Fname);
+            string url = "donordata/updatedonor/" + id;
+            Debug.WriteLine(jss.Serialize(DonorInfo));
+            HttpContent content = new StringContent(jss.Serialize(DonorInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-            Debug.WriteLine(response.StatusCode);
+
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("Details", new { id = id });
@@ -167,18 +153,19 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
-        // GET: Donation/Delete/5
+        // GET: Donor/Delete/5
+        [HttpGet]
         public ActionResult DeleteConfirm(int id)
         {
-            string url = "donationdata/finddonation/" + id;
+            string url = "donordata/finddonor/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             //Can catch the status code (200 OK, 301 REDIRECT), etc.
             //Debug.WriteLine(response.StatusCode);
             if (response.IsSuccessStatusCode)
             {
-                //Put data into player data transfer object
-                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
-                return View(SelectedDonation);
+                //Put data into Team data transfer object
+                DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
+                return View(SelectedDonor);
             }
             else
             {
@@ -186,12 +173,12 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
-        // POST: Donation/Delete/5
+        // POST: Donor/Delete/5
         [HttpPost]
-        //validate token
+        [ValidateAntiForgeryToken()]
         public ActionResult Delete(int id)
         {
-            string url = "donationdata/deletedonation/" + id;
+            string url = "donordata/deletedonor/" + id;
             //post body is empty
             HttpContent content = new StringContent("");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
@@ -207,6 +194,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 return RedirectToAction("Error");
             }
         }
+
         public ActionResult Error()
         {
             return View();

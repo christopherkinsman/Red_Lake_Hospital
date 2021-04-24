@@ -190,6 +190,7 @@
     <Compile Include="Controllers\DepartmentsDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
+    <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\DonorDataController.cs" />
     <Compile Include="Controllers\EcardsController.cs" />
     <Compile Include="Controllers\EcardsDataController.cs" />
@@ -417,6 +418,12 @@
     <Content Include="Views\Photo\View.cshtml" />
     <Content Include="Views\Donation\Create.cshtml" />
     <Content Include="Views\Donation\DeleteConfirm.cshtml" />
+    <Content Include="Views\Donor\Create.cshtml" />
+    <Content Include="Views\Donor\Edit.cshtml" />
+    <Content Include="Views\Donor\Index.cshtml" />
+    <Content Include="Views\Donor\List.cshtml" />
+    <Content Include="Views\Donor\DeleteConfirm.cshtml" />
+    <Content Include="Views\Donor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
