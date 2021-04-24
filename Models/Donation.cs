@@ -34,6 +34,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         //A donation is made by one donor
         [ForeignKey("Donor")]
         public int DonorId { get; set; }
+        /*public string Fname { get; set; }
+        public int Lname { get; set; }*/
         public virtual Donor Donor { get; set; }
     }
 
@@ -63,8 +65,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public string PaymentNumber { get; set; }
 
         public int DonorId { get; set; }
+        /*[DisplayName("Donor first name")]
+        public string Fname { get; set; }
+        [DisplayName("Donor last name")]
+        public string Lname { get; set; }*/
 
     }
-
-
 }

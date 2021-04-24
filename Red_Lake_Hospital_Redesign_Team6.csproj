@@ -190,6 +190,7 @@
     <Compile Include="Controllers\DepartmentsDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
+    <Compile Include="Controllers\DonorDataController.cs" />
     <Compile Include="Controllers\EcardsController.cs" />
     <Compile Include="Controllers\EcardsDataController.cs" />
     <Compile Include="Controllers\FaqController.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Models\ViewModels\TestimonialDetails.cs" />
     <Compile Include="Models\ViewModels\UpdateBlogViewModel.cs" />
     <Compile Include="Models\ViewModels\UpdateContact.cs" />
+    <Compile Include="Models\ViewModels\UpdateDonation.cs" />
     <Compile Include="Models\ViewModels\UpdateFaq.cs" />
     <Compile Include="Models\ViewModels\UpdateFeedbackViewModel.cs" />
     <Compile Include="Models\ViewModels\UpdatePhoto.cs" />
@@ -367,7 +369,6 @@
     <Content Include="Views\JobsView\adminJobPostingDeleteConfirmed.cshtml" />
     <Content Include="Views\JobsView\jobSearch.cshtml" />
     <Content Include="Views\Donation\Edit.cshtml" />
-    <Content Include="Views\Donation\Index.cshtml" />
     <Content Include="Views\Donation\List.cshtml" />
     <Content Include="Views\Contacts\List.cshtml" />
     <Content Include="Views\Contacts\Delete.cshtml" />
@@ -414,6 +415,8 @@
     <Content Include="Views\Photo\Details.cshtml" />
     <Content Include="Views\Photo\List.cshtml" />
     <Content Include="Views\Photo\View.cshtml" />
+    <Content Include="Views\Donation\Create.cshtml" />
+    <Content Include="Views\Donation\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
