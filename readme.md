@@ -1,4 +1,9 @@
-Red Lake Hospital Project
+# Red Lake Hospital Project
+
+- Admin Account: Usr: admin@admin.com Pass: Test123*
+- Regular User Account: Usr: user@user.com Pass: Test123*
+
+
 ## Nai-Hsien's Contributions - Online donation feature
 ### Models/ViewModels 
 Models/Donation.cs <br />
@@ -21,6 +26,19 @@ Views/Donation/Edit.cshtml (not currently fully functioning) <br />
     - https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio#ignore-files-only-on-your-system
 
 ## Gord's Contributions - Job Posting and Job Application Features
+
+### Changes for Final Submission
+- Implemented public-private key security for API controller resources
+- Created new API controller to distribute server's public key to clients
+- Split up JobsApiController by subject entities into JobsApplicationsApiController and JobPostingsApiController
+- Moved job posting list view's processing work to the API controller
+
+#### Files Changed or Added for Final Submission
+- /Controllers/JobsApplicationsApiController.cs
+- /Controller/JobsPostingsApiController.cs
+- /Controller/PublicKeyDistributionController.cs
+- /Models/Authentication.cs
+- /Models/PublicKeyDto.cs
 
 ### Controllers
 Set up role and users <br />
