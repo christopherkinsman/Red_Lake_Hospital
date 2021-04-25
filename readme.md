@@ -1,17 +1,17 @@
-# Red Lake Hospital Project
+Red Lake Hospital Project
 ## Nai-Hsien's Contributions - Online donation feature
-### Models 
+### Models/ViewModels 
 Models/Donation.cs <br />
 Models/Donor.cs <br />
+ViewModels/ShowDonation.cs
+ViewModels/UpdateDonation.cs
 ### Controllers
 Controllers/DonationDataController.cs <br />
 Controllers/DonationController.cs <br />
 Controllers/DonorDataController.cs <br />
 ### Views
-all the views under donation and donor folders. Several are not currently functioning:
+all the views under donation and donor folders. All CRUD features are functioning now except for the following:
 Views/Donation/Edit.cshtml (not currently fully functioning) <br />
-Views/Donor/Edit.cshtml (not currently fully functioning) <br />
-Views/Donor/DeleteConfirm.cshtml (not currently fully functioning) <br />
 
 ### Debugging:
 1. Solving merging conflict <br />
