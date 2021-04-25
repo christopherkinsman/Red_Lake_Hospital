@@ -13,6 +13,9 @@ using Microsoft.Owin.Security;
 using System.IO;
 using Red_Lake_Hospital_Redesign_Team6.Models;
 using Red_Lake_Hospital_Redesign_Team6.Models.ViewModels;
+using System.Numerics;
+using EasyEncryption;
+
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
@@ -24,7 +27,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         private JavaScriptSerializer jss = new JavaScriptSerializer();
         private static readonly HttpClient client;
 
-        private readonly string AUTHKEY = "26e554464af61cfccbc87c2beac84002"; //Create an authorization key to secure access between the JobsViewController and the JobsApiContoller; the key is simply the MD5 hashed value of the following string: "Hi Christine"
+        private static readonly int CLIENTPRIVATEKEY = 8402; //Declare private key for API access
+
+        private static string AUTHKEY;
+
 
         static JobsViewController()
         {
@@ -36,6 +42,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             client.BaseAddress = new Uri("https://localhost:44349/api/");
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
+
+            AUTHKEY = Authentication.getAuthKey(CLIENTPRIVATEKEY); //Create the public-private key to access the APIs
+            
         }
 
 
@@ -49,21 +58,28 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult JobPostingsList()
         {
 
-            string url = $"jobsapi/listjobs/{AUTHKEY}";
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+
+            Debug.WriteLine(AUTHKEY);
+
+
+            string url = $"jobspostingsapi/listjobs/{AUTHKEY}/current"; //Use the "current" option flag in the URL to get only current kob postings from the API; API was designed to accept "current" and "all" as possible flags and will return all job postings if no option flag is provided in the URL
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
                 List<JobPostingsViewModel> JobsPostingsList = response.Content.ReadAsAsync<List<JobPostingsViewModel>>().Result;
 
 
-                //Iterate over the job postings and remove any posting that has already expired so that they will not be passed to the View
-                for (int i = 0; i < JobsPostingsList.Count(); i++ )
-                {
-                    if (JobsPostingsList[i].PostingExpiryDate < DateTime.Now)
-                    {
-                        JobsPostingsList.RemoveAt(i);
-                    }
-                }
+                ////Iterate over the job postings and remove any posting that has already expired so that they will not be passed to the View
+                //for (int i = 0; i < JobsPostingsList.Count(); i++ )
+                //{
+                //    if (JobsPostingsList[i].PostingExpiryDate < DateTime.Now)
+                //    {
+                //        JobsPostingsList.RemoveAt(i);
+                //    }
+                //}
 
 
                 return View(JobsPostingsList);
@@ -86,7 +102,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [HttpGet]
         public ActionResult JobPostingDetails(int id)
         {
-            string url = $"jobsapi/jobdetails/{AUTHKEY}/{id}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/jobdetails/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -114,7 +134,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [HttpGet]
         public ActionResult JobApply(int id) 
         {
-            string url = $"jobsapi/jobdetails/{AUTHKEY}/{id}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/jobdetails/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -148,6 +172,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult postJobApply(JobApplicationViewModel JobApplicationViewModel, HttpPostedFileBase newCvPackage)
         {
 
+
             if (!ModelState.IsValid)
             {
                 return View("Error");
@@ -168,9 +193,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 return View("IncompleteForm");
             }
 
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
 
-
-            string saveCvUrl = $"jobsapi/savecvpackage/{AUTHKEY}/{JobApplicationViewModel.PostingId.ToString()}";
+            string saveCvUrl = $"jobsapplicationsapi/savecvpackage/{AUTHKEY}/{JobApplicationViewModel.PostingId.ToString()}";
             MultipartFormDataContent requestcontent = new MultipartFormDataContent();
             HttpContent fileContent = new StreamContent(newCvPackage.InputStream);
             requestcontent.Add(fileContent, "newCvPackage", newCvPackage.FileName);
@@ -187,7 +213,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
 
                 // Stringify JSON data and send the create request to the API controller using POST method
-                string createJobPostingUrl = $"jobsapi/createjobapplication/{AUTHKEY}";
+                string createJobPostingUrl = $"jobsapplicationsapi/createjobapplication/{AUTHKEY}";
                 HttpContent content = new StringContent(jss.Serialize(JobApplicationViewModel));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage createJobPostingResponse = client.PostAsync(createJobPostingUrl, content).Result;
@@ -223,7 +249,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobApplicationsList()
         {
 
-            string url = $"jobsapi/listapplications/{AUTHKEY}";
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobsapplicationsapi/listapplications/{AUTHKEY}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -252,7 +281,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobApplicationEdit(int id)
         {
 
-            string url = $"jobsapi/applicationdetails/{AUTHKEY}/{id}";
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobsapplicationsapi/applicationdetails/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -301,7 +333,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 return View("IncompleteForm");
             }
 
-            string url = $"jobsapi/editapplication/{AUTHKEY}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobsapplicationsapi/editapplication/{AUTHKEY}";
             HttpContent content = new StringContent(jss.Serialize(editedApplication));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
@@ -352,7 +388,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobApplicationsDeleteConfirmed(int id)
         {
 
-            string url = $"jobsapi/deleteapplication/{AUTHKEY}/{id}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobsapplicationsapi/deleteapplication/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -380,7 +420,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobPostingsList()
         {
 
-            string url = $"jobsapi/listjobs/{AUTHKEY}";
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/listjobs/{AUTHKEY}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -406,7 +449,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobPostingCreate()
         {
 
-            string url = $"jobsapi/getalldepartments/{AUTHKEY}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/getalldepartments/{AUTHKEY}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -462,7 +509,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 DepartmentId = newPostingViewModel.DepartmentId
             };
 
-            string url = $"jobsapi/createposting/{AUTHKEY}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/createposting/{AUTHKEY}";
             HttpContent content = new StringContent(jss.Serialize(newPostingModel));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
@@ -495,14 +546,18 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobPostingEdit(int id)
         {
 
-            string url = $"jobsapi/jobdetails/{AUTHKEY}/{id}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/jobdetails/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
 
                 JobPostingsViewModel postingViewModel = response.Content.ReadAsAsync<JobPostingsViewModel>().Result;
 
-                string departmentsUrl = $"jobsapi/getalldepartments/{AUTHKEY}";
+                string departmentsUrl = $"jobspostingsapi/getalldepartments/{AUTHKEY}";
                 HttpResponseMessage departmentsResponse = client.GetAsync(departmentsUrl).Result;
                 if (departmentsResponse.IsSuccessStatusCode)
                 {
@@ -558,7 +613,12 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             // Update information of user responsible for the job posting with the information of the user who edited the posting
             editedPostingViewModel.ApplicationUserId = User.Identity.GetUserId();
 
-            string url = $"jobsapi/editposting/{AUTHKEY}";
+
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/editposting/{AUTHKEY}";
             HttpContent content = new StringContent(jss.Serialize(editedPostingViewModel));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
@@ -608,7 +668,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult adminJobPostingDeleteConfirmed(int id)
         {
 
-            string url = $"jobsapi/deleteposting/{AUTHKEY}/{id}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/deleteposting/{AUTHKEY}/{id}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -634,7 +698,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult jobSearch(string searchParam)
         {
 
-            string url = $"jobsapi/searchpostings/{AUTHKEY}/{searchParam}";
+
+            //Get API authenication key by combining the server's public key with the client's private key and then hashing the result using SHA1
+            //string AUTHKEY = getAuthKey(CLIENTPRIVATEKEY);
+
+            string url = $"jobspostingsapi/searchpostings/{AUTHKEY}/{searchParam}";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
