@@ -7,8 +7,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models.ViewModels
 {
     public class ShowDonation
     {
-        public DonationDto Donation { get; set; }
+        public DonationDto donation { get; set; }
         //information about the team the player plays for
-        public DonorDto Donor { get; set; }
+        public DonorDto donor { get; set; }
     }
 }
