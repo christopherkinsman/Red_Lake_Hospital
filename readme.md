@@ -31,7 +31,7 @@ Views/Donation/Edit.cshtml (not currently fully functioning) <br />
 - Implemented public-private key security for API controller resources
 - Created new API controller to distribute server's public key to clients
 - Split up JobsApiController by subject entities into JobsApplicationsApiController and JobPostingsApiController
-- Moved job posting list view's processing work to the API controller
+- Moved job posting list view's processing work to the API controller using option flags allowing the return of all job postings or only unexpired/current job postings
 
 #### Files Changed or Added for Final Submission
 - /Controllers/JobsViewController.cs
