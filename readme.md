@@ -34,6 +34,7 @@ Views/Donation/Edit.cshtml (not currently fully functioning) <br />
 - Moved job posting list view's processing work to the API controller
 
 #### Files Changed or Added for Final Submission
+- /Controllers/JobsViewController.cs
 - /Controllers/JobsApplicationsApiController.cs
 - /Controller/JobsPostingsApiController.cs
 - /Controller/PublicKeyDistributionController.cs
