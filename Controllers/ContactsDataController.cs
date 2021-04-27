@@ -17,7 +17,12 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/ContactsData/5
+        /// <summary>
+        /// The GetContacts method accesses the database to obtain a collection of all contact listings and return the collection.
+        /// </summary>
+        /// <returns>List of all contacts </returns>
+        /// <param name="key">MD5 key required to access this API end point.</param>
+        // GET: api/contactsdata/List/{key}
         [ResponseType(typeof(IEnumerable<ContactDto>))]
         public IHttpActionResult GetContacts()
         {
@@ -43,6 +48,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(ContactDtos);
         }
 
+
+        /// <summary>
+        /// Finds a particular contact in the database with a 200 status code. If the player is not found, return 404.
+        /// </summary>
+        /// <param name="id">The contact id</param>
+        /// <returns>Information about the contact, including contact id, first and last name, email, phone, message and departmentname</returns>
+        // <example>
+        // GET: api/ContactsData/FindContact/{key}
         [HttpGet]
         [ResponseType(typeof(ContactDto))]
         public IHttpActionResult FindContact(int id)
@@ -72,12 +85,20 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(ContactDtos);
         }
 
+
+        /// <summary>
+        /// Finds a particular Department in the database given a contact id with a 200 status code. If the Department is not found, return 404.
+        /// </summary>
+        /// <param name="id">The contact id</param>
+        /// <returns>Information about the Department, including Department id and Department Name</returns>
+        // <example>
+        // GET: api/DepartmentData/FindDepartmentForContact/{key}
         [HttpGet]
         [ResponseType(typeof(DepartmentsDto))]
         public IHttpActionResult FindDepartmentForContact(int id)
         {
-            //Finds the first team which has any players
-            //that match the input playerid
+            //Finds the first department which has any contacts
+            //that match the input contactid
             DepartmentsModel departments = db.Departments
                 .Where(d => d.Contact.Any(c => c.contact_id == id))
                 .FirstOrDefault();
@@ -99,7 +120,17 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(DepartmentsDtos);
         }
 
-        // PUT: api/ContactsData/5
+        
+        /// <summary>
+        /// Updates a contact in the database given information about the contact.
+        /// </summary>
+        /// <param name="id">The contact id</param>
+        /// <param name="player">A contact object. Received as POST data.</param>
+        /// <returns></returns>
+        /// <example>
+        /// POST: api/ContactsData/UpdateContact/{key}
+        /// FORM DATA: Contact JSON Object
+        // PUT: api/ContactsData/UpdateContact{key}
         [ResponseType(typeof(void))]
         [HttpPost]
         [Authorize(Roles = "Admin")]
@@ -139,6 +170,15 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+
+        /// <summary>
+        /// Adds a contact to the database.
+        /// </summary>
+        /// <param name="player">A contact object. Sent as POST form data.</param>
+        /// <returns>status code 200 if successful. 400 if unsuccessful</returns>
+        /// <example>
+        /// POST: api/ContactsData/AddContact
+        ///  FORM DATA: Contact JSON Object
         [ResponseType(typeof(Contact))]
         [HttpPost]
         [Route("api/contactsdata/addcontact")]
@@ -157,6 +197,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(contact.contact_id);
         }
 
+
+        /// <summary>
+        /// Deletes a contact in the database
+        /// </summary>
+        /// <param name="id">The id of the contact to delete.</param>
+        /// <returns>200 if successful. 404 if not successful.</returns>
+        /// <example>
+        /// POST: api/ContactsData/DeleteContact/{key}
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public IHttpActionResult DeleteContact(int id)
@@ -182,6 +230,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Finds a contact in the system. Internal use only.
+        /// </summary>
+        /// <param name="id">The contact id</param>
+        /// <returns>TRUE if the contact exists, false otherwise.</returns>
         private bool ContactExists(int id)
         {
             return db.Contacts.Count(e => e.contact_id == id) > 0;

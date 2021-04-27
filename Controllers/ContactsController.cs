@@ -39,6 +39,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         }
 
+
+        /// <summary>
+        /// Grabs the authentication credentials which are sent to the Controller.
+        /// This is NOT considered a proper authentication technique for the WebAPI. It piggybacks the existing authentication set up in the template for Individual User Accounts. Considering the existing scope and complexity of the course, it works for now.
+        /// 
+        /// Here is a descriptive article which walks through the process of setting up authorization/authentication directly.
+        /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api
+        /// </summary>
         private void GetApplicationCookie()
         {
             string token = "";
@@ -65,21 +73,36 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return View();
         }
 
+        //GET: Contacts/List
         public ActionResult List()
         {
+
+            // Grab all contacts
             string url = "contactsdata/getcontacts";
+
+            // Send off an HTTP request
+            // GET : /api/contactsdata/getcontacts
+            // Retrieve response
             HttpResponseMessage response = client.GetAsync(url).Result;
+
+            // If the response is a success, proceed
             if (response.IsSuccessStatusCode)
             {
+                // Fetch the response content into IEnumerable<ContactDto>
                 IEnumerable<ContactDto> SelectedContacts = response.Content.ReadAsAsync<IEnumerable<ContactDto>>().Result;
+
+                //Return the list of contacts
                 return View(SelectedContacts);
             }
             else
             {
+                // If we reach here something went wrong with our list algorithm
                 return RedirectToAction("Error");
             }
         }
 
+
+        // GET: Contacts/Details/{key}
         public ActionResult Details(int id)
         {
 
@@ -158,19 +181,23 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         }
 
 
-        // POST: Contacts/Edit/5
+        // POST: Contacts/Edit/{key}
         public ActionResult Edit(int id)
         {
             UpdateContact ViewModel = new UpdateContact();
 
             string url = "contactsdata/findcontact" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
 
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
+                //Put data into contact data transfer object
                 ContactDto SelectedContact = response.Content.ReadAsAsync<ContactDto>().Result;
                 ViewModel.contact = SelectedContact;
 
+                //get information about departments this contact belongs to.
                 url = "departmentsdata/getdepartments";
                 response = client.GetAsync(url).Result;
                 IEnumerable<DepartmentsDto> PotentialContact = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
@@ -185,7 +212,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             
         }
 
-        // GET: Player/Delete/5
+        // GET: Player/Delete/{key}
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirm(int id)
@@ -229,6 +256,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             {
                 return RedirectToAction("Error");
             }
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }

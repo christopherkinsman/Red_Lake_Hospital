@@ -639,7 +639,6 @@ C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\rosl
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Http.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -659,36 +658,6 @@ C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\rosl
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\vbc.rsp
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Antlr3.Runtime.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Newtonsoft.Json.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Owin.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Net.Http.Formatting.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Helpers.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.WebHost.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Mvc.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Optimization.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Razor.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Razor.dll
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\WebGrease.dll
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Helpers.xml
@@ -709,7 +678,6 @@ C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Micr
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.xml
-C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Twitter.xml
@@ -1080,3 +1048,4 @@ C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_workin
 C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
 C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\EasyEncryption.dll
+C:\Users\Kunal Sailor\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EasyEncryption.dll

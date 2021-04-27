@@ -39,6 +39,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         }
 
+
+        // <summary>
+        /// Grabs the authentication credentials which are sent to the Controller.
+        /// This is NOT considered a proper authentication technique for the WebAPI. It piggybacks the existing authentication set up in the template for Individual User Accounts. Considering the existing scope and complexity of the course, it works for now.
+        /// 
+        /// Here is a descriptive article which walks through the process of setting up authorization/authentication directly.
+        /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api
+        /// </summary>
         private void GetApplicationCookie()
         {
             string token = "";
@@ -65,21 +73,37 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return View();
         }
 
+        //GET: Ecards/List
         public ActionResult List()
         {
+
+            // Grab all ecards
             string url = "ecardsdata/getecards";
+
+            // Send off an HTTP request
+            // GET : /api/ecardsdata/getecard
+            // Retrieve response
             HttpResponseMessage response = client.GetAsync(url).Result;
+
+            // If the response is a success, proceed
             if (response.IsSuccessStatusCode)
             {
+
+                // Fetch the response content into IEnumerable<EcardsDto>
                 IEnumerable<EcardsDto> SelectedEcards = response.Content.ReadAsAsync<IEnumerable<EcardsDto>>().Result;
+
+                //Return the list of ecards
                 return View(SelectedEcards);
             }
             else
             {
+                // If we reach here something went wrong with our list algorithm
                 return RedirectToAction("Error");
             }
         }
 
+
+        // GET: Ecards/Details/{key}
         public ActionResult Details(int id)
         {
 
@@ -96,7 +120,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             //Debug.WriteLine(response.StatusCode);
             if (response.IsSuccessStatusCode)
             {
-                //Put data into contact data transfer object
+                //Put data into ecard data transfer object
                 EcardsDto SelectedEcard = response.Content.ReadAsAsync<EcardsDto>().Result;
                 ViewModel.ecard = SelectedEcard;
 
@@ -114,6 +138,21 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             }
         }
 
+        // GET: Ecards/Create
+        // only administrators get to this page
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create()
+        {
+            EditEcard ViewModel = new EditEcard();
+            //get information about department this person COULD contact.
+            string url = "contactsdata/getcontacts";
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            IEnumerable<DepartmentsDto> PotentialContacts = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
+            ViewModel.alldepartments = PotentialContacts;
+
+            return View(ViewModel);
+        }
+
 
         // POST: Ecards/Create
         [HttpPost]
@@ -125,7 +164,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             GetApplicationCookie();
 
             //Debug.WriteLine(EcardInfo.EcardMessage);
-            //Debug.WriteLine(jss.Serialize(ContactInfo));
+            //Debug.WriteLine(jss.Serialize(EcardInfo));
             string url = "ecardsdata/addecard";
             HttpContent content = new StringContent(jss.Serialize(EcardInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -146,19 +185,30 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [HttpGet]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            string url = "ecardsdata/details";
+            EditEcard ViewModel = new EditEcard();
+
+            string url = "ecardsdara/findecard" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+
             if (response.IsSuccessStatusCode)
             {
+                //Put data into contact data transfer object
+                EcardsDto SelectedEcards = response.Content.ReadAsAsync<EcardsDto>().Result;
+                ViewModel.ecards = SelectedEcards;
 
-                EcardsDto SelectedEcard = response.Content.ReadAsAsync<EcardsDto>().Result;
+                //get information about departments this ecard belongs to.
+                url = "departmentsdata/getdepartments";
+                response = client.GetAsync(url).Result;
+                IEnumerable<DepartmentsDto> PotentialContact = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
+                ViewModel.alldepartments = PotentialContact;
 
-                return View(SelectedEcard);
-
+                return View(ViewModel);
             }
             else
             {
-                return View("Error");
+                return RedirectToAction("Error");
             }
         }
 
@@ -206,6 +256,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             {
                 return RedirectToAction("Error");
             }
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }
