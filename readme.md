@@ -59,6 +59,13 @@ All views inside /Views/JobView directory
 
 ## Kunal's Contributions - Contact Us and Send E-cards Features
 
+### Changes for final Submission 
+- Proper Commenting Added.
+- Added responsiveness to the features.
+- Customized HTML/CSS
+- Styling & Adding dynamic content to the home page (Shared/_Layout.cshtml)
+- Added adminstrator log in functionality to operate CRUD on admin side.
+
 ### Controllers
 ContactsController.cs <br />
 ContactsDataController.cs <br />
