@@ -10,7 +10,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
     {
         public int PublicKeyBase { get; set; }
 
-        public BigInteger PublicKeyModulo { get; set; }
+        //This property should have been refered to as the "modulus", not "modulo"
+        public BigInteger PublicKeyModulo { get; set; } 
 
     }
 }
