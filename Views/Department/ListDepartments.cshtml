@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Red_Lake_Hospital_Redesign_Team6.Models.DepartmentsDto>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", "Department", new { id = item.DepartmentId }, null) |
+                @Html.ActionLink("Details", "DetailsofDepartment", "Department", new { id = item.DepartmentId }, null) |
+                @Html.ActionLink("Delete", "DeleteConfirm", "Department", new { id = item.DepartmentId }, null)
+            </td>
+        </tr>
+    }
+
+</table>
