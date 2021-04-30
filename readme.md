@@ -101,6 +101,7 @@ All views inside /Views/Ecards directory
 - Pictures of the UI screens shown below
   
 ![Departments](Content/JerrinImages/Departments.png)
+
 ![Departments](Content/JerrinImages/Departments2.png)
 ![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
 ![EditTestimonial](Content/JerrinImages/EditTestimonial.png)
