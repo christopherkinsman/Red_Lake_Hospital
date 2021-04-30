@@ -100,9 +100,9 @@ All views inside /Views/Ecards directory
 - Joined Job postings for the existing departments along with the testimonials for the department ( As suggested by Christine when MVP was submitted)
 - Pictures of the UI screens shown below
   
-![Departments](Content/JerrinImages/Departments.png)
+![Departments](Content/JerrinImages/DepartmentsPage1.png)
 
-![Departments](Content/JerrinImages/Departments2.png)
+![Departments](Content/JerrinImages/DepartmentsPage2.png)
 ![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
 ![EditTestimonial](Content/JerrinImages/EditTestimonial.png)
 ![DepartmentsDetailsIpad](Content/JerrinImages/DepartmentDetailsIpad.png)
