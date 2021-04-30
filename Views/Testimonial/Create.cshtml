@@ -4,34 +4,33 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create @ViewBag.Id</h2>
+<h2>Create Testimonial</h2>
 
-@using (Html.BeginForm("Create", "Testimonial", new { id = ViewBag.Id }, FormMethod.Post))
+@using (Html.BeginForm("Create", "Testimonial", new { id = ViewBag.Id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Testimonial</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.testimonial_Content, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.testimonial_Content, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.testimonial_Content, "Testimonial Content :", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.testimonial_Content, new { htmlAttributes = new { @class = "form-control textarea-departmentdetails admin", Name = "testimonial_Content" } })
                 @Html.ValidationMessageFor(model => model.testimonial_Content, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.first_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.first_Name, "First Name :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.first_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.first_Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.first_Name, new { htmlAttributes = new { @class = "form-control", Name = "first_Name" } })
+                @Html.ValidationMessageFor(model => model.first_Name, "", new { @class = "text-danger", data_valmsg_for = "first_Name" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.last_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.last_Name, "Last Name :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.last_Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.last_Name, "", new { @class = "text-danger" })
@@ -39,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.email, "Email :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
@@ -47,7 +46,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.phone_Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.phone_Number, "Phone Number :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.phone_Number, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.phone_Number, "", new { @class = "text-danger" })
@@ -55,25 +54,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Has_Pic, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Has_Pic)
-                    @Html.ValidationMessageFor(model => model.Has_Pic, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Pic_Extension, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Pic_Extension, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pic_Extension, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.posted_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.posted_Date, "Posted Date :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.posted_Date, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.posted_Date, "", new { @class = "text-danger" })
@@ -81,15 +62,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Approved, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Approved)
-                    @Html.ValidationMessageFor(model => model.Approved, "", new { @class = "text-danger" })
-                </div>
+            <div class="">
+                <label for="TestimonialPic">Picture:</label>
+                <input type="file" name="TestimonialPic" id="TestimonialPic" class="choosefile" />
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

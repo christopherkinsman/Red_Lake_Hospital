@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <script src="https://cdn.tiny.cloud/1/ikqu9y8appwmry4y9flw7x48fsj6km25jida580lesp45gwx/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,6 +29,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "List", "Contacts")</li>
+                    <li>@Html.ActionLink("Deparments", "ListDepartments", "Department")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -41,7 +44,16 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        //rich text WYSIWYG editor
+        //documentation: https://www.tiny.cloud/docs/quick-start/
+        tinymce.init({
+            selector: 'textarea.admin',
+            selector: '#TestimonialDto_testimonial_Content'
+        });
+    </script>
 </body>
 </html>

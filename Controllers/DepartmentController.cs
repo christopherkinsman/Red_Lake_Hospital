@@ -8,6 +8,8 @@ using Red_Lake_Hospital_Redesign_Team6.Models;
 using Red_Lake_Hospital_Redesign_Team6.Models.ViewModels;
 using System.Net.Http.Headers;
 using System.Web.Script.Serialization;
+using Microsoft.AspNet.Identity;
+using System.Diagnostics;
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
@@ -21,12 +23,36 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         {
             HttpClientHandler handler = new HttpClientHandler()
             {
+                UseCookies = false,
                 AllowAutoRedirect = false
             };
             client = new HttpClient(handler);
             client.BaseAddress = new Uri("https://localhost:44349//api/");
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        /// <summary>
+        /// Gets the authentication credentials which are sent to the controller.
+        /// </summary>
+
+        private void GetApplicationCookie()
+        {
+            string token = "";
+            //HTTP client is set up to be reused, otherwise it will exhaust server resources.
+            //This is a bit dangerous because a previously authenticated cookie could be cached for
+            //a follow-up request from someone else. Reset cookies in HTTP client before grabbing a new one.
+            client.DefaultRequestHeaders.Remove("Cookie");
+            if (!User.Identity.IsAuthenticated) return;
+            HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(".AspNet.ApplicationCookie");
+            if (cookie != null) token = cookie.Value;
+
+            //collect token as it is submitted to the controller
+            //use it to pass along to the WebAPI.
+            Debug.WriteLine("Token Submitted is : " + token);
+            if (token != "") client.DefaultRequestHeaders.Add("Cookie", ".AspNet.ApplicationCookie=" + token);
+
+            return;
         }
 
         /// <summary>
@@ -39,14 +65,49 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <example>
         /// GET: Department/ListDepartments
         /// </example>
-        public ActionResult ListDepartments()
+        public ActionResult ListDepartments(int PageNum = 0)
         {
+            ShowDepartment ViewModel = new ShowDepartment();
+            ViewModel.isadmin = User.IsInRole("admin");
+
             string url = "DepartmentData/ListDepartments";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
                 IEnumerable<DepartmentsDto> ListOfDepartments = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
-                return View(ListOfDepartments);
+
+                // -- Start of Pagination Algorithm --
+
+                // Find the total number of players
+                int DepartmentCount = ListOfDepartments.Count();
+                // Number of players to display per page
+                int PerPage = 4;
+                // Determines the maximum number of pages (rounded up), assuming a page 0 start.
+                int MaxPage = (int)Math.Ceiling((decimal)DepartmentCount / PerPage) - 1;
+
+                // Lower boundary for Max Page
+                if (MaxPage < 0) MaxPage = 0;
+                // Lower boundary for Page Number
+                if (PageNum < 0) PageNum = 0;
+                // Upper Bound for Page Number
+                if (PageNum > MaxPage) PageNum = MaxPage;
+
+                // The Record Index of our Page Start
+                int StartIndex = PerPage * PageNum;
+
+                //Helps us generate the HTML which shows "Page 1 of ..." on the list view
+                ViewData["PageNum"] = PageNum;
+                ViewData["PageSummary"] = " " + (PageNum + 1) + " of " + (MaxPage + 1) + " ";
+
+                // -- End of Pagination Algorithm --
+
+                url = "DepartmentData/getdepartmentspage/" + StartIndex + "/" + PerPage;
+                response = client.GetAsync(url).Result;
+
+                IEnumerable<DepartmentsDto> SelectedDepartmentsPage = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
+
+                ViewModel.departments = SelectedDepartmentsPage;
+                return View(ViewModel);
             }
             else
             {
@@ -64,6 +125,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -83,8 +145,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult Create(DepartmentsModel DepartmentInfo)
         {
+            GetApplicationCookie();
             string url = "DepartmentData/AddDepartment";
             HttpContent content = new StringContent(jss.Serialize(DepartmentInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -112,8 +176,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public ActionResult Update(int id)
         {
+            GetApplicationCookie();
             string url = "DepartmentData/FindDepartment/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
@@ -141,8 +207,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult Update(int id, DepartmentsModel DepartmentInfo)
         {
+            GetApplicationCookie();
             string url = "DepartmentData/UpdateDepartment/" + id;
             HttpContent content = new StringContent(jss.Serialize(DepartmentInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -170,6 +238,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirm(int id)
         {
             string url = "DepartmentData/FindDepartment/" + id;
@@ -198,8 +267,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id)
         {
+            GetApplicationCookie();
             string url = "DepartmentData/DeleteDepartment/" + id;
             HttpContent content = new StringContent("");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
@@ -228,6 +299,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         public ActionResult DetailsofDepartment(int Id)
         {
             DepartmentDetails departmentdetails = new DepartmentDetails();
+            departmentdetails.isadmin = User.IsInRole("admin");
+            departmentdetails.isloggedinUser = User.IsInRole("user");
+            departmentdetails.userid = User.Identity.GetUserId();
+
             string url = "DepartmentData/FindDepartment/" + Id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
@@ -240,6 +315,12 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 response = client.GetAsync(url).Result;
                 IEnumerable<TestimonialDto> testimonials = response.Content.ReadAsAsync<IEnumerable<TestimonialDto>>().Result;
                 departmentdetails.Testimonials = testimonials;
+
+                url = "DepartmentData/FindJobPostingsforDepartment/" + Id;
+                response = client.GetAsync(url).Result;
+                IEnumerable<JobPostingsModel> jobPostings = response.Content.ReadAsAsync<IEnumerable<JobPostingsModel>>().Result;
+                departmentdetails.JobPostings = jobPostings;
+
                 return View(departmentdetails);
             }
             else

@@ -1,34 +1,42 @@
-﻿@model IEnumerable<Red_Lake_Hospital_Redesign_Team6.Models.DepartmentsDto>
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.ShowDepartment
 
 @{
     ViewBag.Title = "View";
 }
 
-<h2>View</h2>
+<h2>Departments</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DepartmentName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+@if (Model.isadmin)
+{
+    <p>
+        @Html.ActionLink("Create New Department", "Create")
+    </p>
+}
+<div class="paginate">
+    @if (Model.departments.Count() > 0)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Update", "Department", new { id = item.DepartmentId }, null) |
-                @Html.ActionLink("Details", "DetailsofDepartment", "Department", new { id = item.DepartmentId }, null) |
-                @Html.ActionLink("Delete", "DeleteConfirm", "Department", new { id = item.DepartmentId }, null)
-            </td>
-        </tr>
+        int PrevPage = Convert.ToInt32(ViewData["PageNum"]) - 1;
+        int NextPage = Convert.ToInt32(ViewData["PageNum"]) + 1;
+        @Html.ActionLink("Prev", "ListDepartments", new { PageNum = PrevPage })
+        @ViewData["PageSummary"]
+        @Html.ActionLink("Next", "ListDepartments", new { PageNum = NextPage })
     }
+</div>
 
-</table>
+@foreach (var item in Model.departments)
+{
+    <div class="card department-card" style="width: 18rem;">
+        <div class="card-body">
+            <h3 class="card-title">@item.DepartmentName</h3>
+            <div class="department-button">
+                @Html.ActionLink("Details", "DetailsofDepartment", "Department", new { id = item.DepartmentId }, new { @class = "btn btn-primary department-button" })
+                @if (Model.isadmin)
+                {
+                    @Html.ActionLink("Edit", "Update", "Department", new { id = item.DepartmentId }, new { @class = "btn btn-primary department-button" }); <br />
+                    @Html.ActionLink("Delete", "DeleteConfirm", "Department", new { id = item.DepartmentId }, new { @class = "btn btn-primary department-button" })
+
+                }
+            </div>
+        </div>
+    </div>
+}

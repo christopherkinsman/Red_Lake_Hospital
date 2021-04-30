@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Red_Lake_Hospital_Redesign_Team6.Models;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using Microsoft.AspNet.Identity;
+using System.IO;
+using System.Diagnostics;
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
@@ -48,7 +52,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 Has_Pic = testimonial.Has_Pic,
                 Pic_Extension = testimonial.Pic_Extension,
                 posted_Date = testimonial.posted_Date,
-                Approved = testimonial.Approved
+                Approved = testimonial.Approved,
+                Id = testimonial.Id
+
             };
             return Ok(NewTestimonial);
         }
@@ -68,6 +74,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [HttpPost]
         [ResponseType(typeof(Testimonial))]
         [Route("api/TestimonialData/AddTestimonial/{DepartmentId}")]
+        [Authorize(Roles = "admin,user")]
         public IHttpActionResult AddTestimonial(int DepartmentId, Testimonial Testimonial)
         {
             if (!ModelState.IsValid)
@@ -105,6 +112,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [HttpPost]
         [ResponseType(typeof(void))]
         [Route("api/TestimonialData/UpdateTestimonial/{DepartmentId}/{TestimonialId}")]
+        [Authorize(Roles = "admin,user")]
         public IHttpActionResult UpdateTestimonial(int DepartmentId, int TestimonialId, [FromBody] Testimonial Testimonial)
         {
             if (!ModelState.IsValid)
@@ -117,6 +125,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 return BadRequest();
             }
 
+            if (!User.IsInRole("admin"))
+            {
+                if (User.Identity.GetUserId() != Testimonial.Id) return Unauthorized();
+            }
+
             DepartmentsModel DepartmentSelected = db.Departments.Find(DepartmentId);
 
             if (DepartmentSelected == null)
@@ -127,6 +140,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             else
             {
                 db.Entry(Testimonial).State = EntityState.Modified;
+
+                db.Entry(Testimonial).Property(t => t.Has_Pic).IsModified = false;
+                db.Entry(Testimonial).Property(t => t.Pic_Extension).IsModified = false;
 
                 try
                 {
@@ -150,6 +166,79 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         }
 
         /// <summary>
+        /// Receives testimonial picture data, uploads it to the webserver and updates the testimonial's Has_Pic option
+        /// </summary>
+        /// <param name="id">the testimonial id</param>
+        /// <returns>status code 200 if successful.</returns>
+        /// <example>
+        /// curl -F TestimonialPic=@file.jpg "https://localhost:xx/api/TestimonialData/UpdateTestimonialPic/2"
+        /// POST: api/TestimonialData/UpdateTestimonialPic/3
+        /// HEADER: enctype=multipart/form-data
+        /// FORM-DATA: image
+        /// </example>
+        /// https://stackoverflow.com/questions/28369529/how-to-set-up-a-web-api-controller-for-multipart-form-data
+        [HttpPost]
+        public IHttpActionResult UpdateTestimonialPic(int id)
+        {
+            bool haspic = false;
+            string picextension;
+            if (Request.Content.IsMimeMultipartContent())
+            {
+                int numfiles = HttpContext.Current.Request.Files.Count;
+
+                //Check if a file is posted
+                if (numfiles == 1 && HttpContext.Current.Request.Files[0] != null)
+                {
+                    var TestimonialPic = HttpContext.Current.Request.Files[0];
+                    //Check if the file is empty
+                    if (TestimonialPic.ContentLength > 0)
+                    {
+                        var valtypes = new[] { "jpeg", "jpg", "png", "gif" };
+                        var extension = Path.GetExtension(TestimonialPic.FileName).Substring(1);
+                        //Check the extension of the file
+                        if (valtypes.Contains(extension))
+                        {
+                            try
+                            {
+                                //file name is the id of the image
+                                string fn = id + "." + extension;
+
+                                //get a direct file path to ~/Content/Players/{id}.{extension}
+                                string path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Testimonials/"), fn);
+
+                                //save the file
+                                TestimonialPic.SaveAs(path);
+
+                                //if these are all successful then we can set these fields
+                                haspic = true;
+                                picextension = extension;
+
+                                //Update the player haspic and picextension fields in the database
+                                Testimonial SelectedTestimonial = db.Testimonials.Find(id);
+
+
+                                SelectedTestimonial.Has_Pic = haspic;
+                                SelectedTestimonial.Pic_Extension = extension;
+                                db.Entry(SelectedTestimonial).State = EntityState.Modified;
+
+                                db.SaveChanges();
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Debug.WriteLine("Player Image was not saved successfully.");
+                                Debug.WriteLine("Exception:" + ex);
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            return Ok();
+        }
+
+        /// <summary>
         /// Deletes a testimonial from the database
         /// </summary>
         /// <param name="id">Id of the testimonial to be deleted</param>
@@ -162,6 +251,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [ResponseType(typeof(DepartmentsModel))]
+        [Authorize(Roles = "admin,user")]
         public IHttpActionResult DeleteTestimonial(int id)
         {
             Testimonial testimonial = db.Testimonials.Find(id);
@@ -169,6 +259,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             if (testimonial == null)
             {
                 return NotFound();
+            }
+
+            if (!User.IsInRole("admin"))
+            {
+                if (User.Identity.GetUserId() != testimonial.Id) return Unauthorized();
             }
 
             db.Testimonials.Remove(testimonial);

@@ -47,6 +47,28 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(DepartmentDtos);
         }
 
+        [ResponseType(typeof(IEnumerable<DepartmentsDto>))]
+        [Route("api/DepartmentData/getdepartmentspage/{StartIndex}/{PerPage}")]
+        public IHttpActionResult getdepartmentspage(int StartIndex, int PerPage)
+        {
+            List<DepartmentsModel> Departments = db.Departments.OrderBy(d => d.DepartmentId).Skip(StartIndex).Take(PerPage).ToList();
+            List<DepartmentsDto> DepartmentDtos = new List<DepartmentsDto> { };
+
+            //Here you can choose which information is exposed to the API
+            foreach (var Department in Departments)
+            {
+                DepartmentsDto NewDepartment = new DepartmentsDto
+                {
+                    DepartmentId = Department.DepartmentId,
+                    DepartmentName = Department.DepartmentName
+                };
+                DepartmentDtos.Add(NewDepartment);
+            }
+
+            return Ok(DepartmentDtos);
+        }
+
+
         /// <summary>
         /// Finds a single department based on the department Id passed in.
         /// If the actor is not found returns a 404 error
@@ -90,6 +112,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [ResponseType(typeof(void))]
+        [Authorize(Roles = "admin")]
         public IHttpActionResult UpdateDepartment(int id, [FromBody] DepartmentsModel Department)
         {
             if (!ModelState.IsValid)
@@ -140,6 +163,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [ResponseType(typeof(DepartmentsModel))]
+        [Authorize(Roles = "admin")]
         public IHttpActionResult AddDepartment([FromBody] DepartmentsModel Department)
         {
             if (!ModelState.IsValid)
@@ -167,6 +191,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [ResponseType(typeof(DepartmentsModel))]
+        [Authorize(Roles = "admin")]
         public IHttpActionResult DeleteDepartment(int id)
         {
             DepartmentsModel Department = db.Departments.Find(id);
@@ -217,11 +242,50 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                     Has_Pic = Testimonial.Has_Pic,
                     Pic_Extension = Testimonial.Pic_Extension,
                     posted_Date = Testimonial.posted_Date,
-                    Approved = Testimonial.Approved
+                    Approved = Testimonial.Approved,
+                    Id = Testimonial.Id
                 };
                 testimonialDtos.Add(NewTestimonial);
             }
             return Ok(testimonialDtos);
+        }
+
+        /// <summary>
+        ///  Finds the job postings for a particular department
+        /// </summary>
+        /// <param name="id">Id of the department</param>
+        /// <returns>
+        ///     A list of JobPostingsModel which contains the job postings of the department.
+        /// </returns>
+        /// <example>
+        ///     GET: api/DepartmentData/FindJobPostingsforDepartment/1
+        /// </example>
+        [HttpGet]
+        [ResponseType(typeof(IEnumerable<JobPostingsModel>))]
+        public IHttpActionResult FindJobPostingsforDepartment(int id)
+        {
+            List<JobPostingsModel> jobPostings = db.JobPostings
+                .Where(j => j.DepartmentId == id)
+                .ToList();
+
+            List<JobPostingsModel> jobs = new List<JobPostingsModel> { };
+
+            foreach (var jobPosting in jobPostings)
+            {
+                JobPostingsModel job = new JobPostingsModel
+                {
+                    ApplicationUserId = jobPosting.ApplicationUserId,
+                    PostingDate = jobPosting.PostingDate,
+                    PostingExpiryDate = jobPosting.PostingExpiryDate,
+                    PostingTitle = jobPosting.PostingTitle,
+                    PostingDescription = jobPosting.PostingDescription,
+                    PostingRemuneration = jobPosting.PostingRemuneration,
+                    DepartmentId = jobPosting.DepartmentId,
+                    PostingId = jobPosting.PostingId
+                };
+                jobs.Add(job);
+            }
+            return Ok(jobs);
         }
 
         /// <summary>
@@ -237,7 +301,6 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         {
             return db.Departments.Count(e => e.DepartmentId == id) > 0;
         }
-
 
     }
 }

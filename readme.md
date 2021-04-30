@@ -89,6 +89,24 @@ All views inside /Views/Ecards directory
 
 ## Jerrin's Contributions - Department and Testimonial Features
 
+#### Files Changed or Added for Final Submission
+- Added admin CRUD functionality to all the departments and Testimonials in the database.
+- Added responsiveness to all the HTML elements with the help of Bootstrap
+- Added Validations for all the input HTML elements
+- Added a WYSIWYG editor for the Update Testimonial Page
+- Added Pagination for the Department Listing page
+- Added Image uploading for the testimonials in the database.
+- Added Customised HTML/CSS UI's for departments and testimonials
+- Joined Job postings for the existing departments along with the testimonials for the department ( As suggested by Christine when MVP was submitted)
+- Pictures of the UI screens shown below
+  
+![Departments](Content/JerrinImages/Departments.png)
+![Departments](Content/JerrinImages/Departments2.png)
+![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
+![EditTestimonial](Content/JerrinImages/EditTestimonial.png)
+![DepartmentsDetailsIpad](Content/JerrinImages/DepartmentDetailsIpad.png)
+
+
 ### Controllers
 
 TestimonialDataController.cs <br />

@@ -34,6 +34,84 @@ textarea {
     max-width: 280px;
 }
 
+/*Styles added By Jerrin*/
+
+.department-card {
+    width: 250px !important;
+    padding: 10px;
+    background-color: #ededf4;
+    border-radius: 4px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.departmentdetails-card {
+    width: 250px !important;
+    height: 650px;
+    padding: 10px;
+    background-color: #ededf4;
+    border-radius: 4px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.department-button {
+    margin: 10px;
+}
+
+.department-button {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap');
+
+.department-details-img {
+    width: 225px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.card-subtitle {
+    text-align: right;
+}
+
+.card-text {
+    height: 245px;
+    padding: 10px;
+    font-family: "Titillium", Arial, sans-serif !important;
+    font-style: italic;
+}
+
+.departmentdetails-title {
+    background-color: #ededf4;
+    height: 42px;
+    padding: 7px;
+}
+
+.admin {
+    color: red;
+}
+
+.jobdetails-card {
+    width: 250px !important;
+    height: 320px;
+    padding: 15px;
+    background-color: #ededf4;
+    border-radius: 4px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.jobcard {
+    height: 155px !important;
+}
+
+/*Styles added By Jerrin*/
+
 @media screen and (max-width:700px) {
     /*change to two column*/
     .record {

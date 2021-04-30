@@ -7,7 +7,9 @@ using Red_Lake_Hospital_Redesign_Team6.Models;
 using Red_Lake_Hospital_Redesign_Team6.Models.ViewModels;
 using System.Net.Http.Headers;
 using System.Net.Http;
+using System.Diagnostics;
 using System.Web.Script.Serialization;
+using Microsoft.AspNet.Identity;
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
@@ -20,12 +22,36 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         {
             HttpClientHandler handler = new HttpClientHandler()
             {
+                UseCookies = false,
                 AllowAutoRedirect = false
             };
             client = new HttpClient(handler);
             client.BaseAddress = new Uri("https://localhost:44349//api/");
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        /// <summary>
+        /// Gets the authentication credentials which are sent to the controller.
+        /// </summary>
+
+        private void GetApplicationCookie()
+        {
+            string token = "";
+            //HTTP client is set up to be reused, otherwise it will exhaust server resources.
+            //This is a bit dangerous because a previously authenticated cookie could be cached for
+            //a follow-up request from someone else. Reset cookies in HTTP client before grabbing a new one.
+            client.DefaultRequestHeaders.Remove("Cookie");
+            if (!User.Identity.IsAuthenticated) return;
+            HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(".AspNet.ApplicationCookie");
+            if (cookie != null) token = cookie.Value;
+
+            //collect token as it is submitted to the controller
+            //use it to pass along to the WebAPI.
+            Debug.WriteLine("Token Submitted is : " + token);
+            if (token != "") client.DefaultRequestHeaders.Add("Cookie", ".AspNet.ApplicationCookie=" + token);
+
+            return;
         }
 
         /// <summary>
@@ -36,6 +62,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// GET : Testimonial/Create/2
         /// </example>
 
+        [Authorize(Roles = "admin,user")]
         [HttpGet]
         public ActionResult Create(int id)
         {
@@ -66,8 +93,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [Route("Testimonial/Create/{DepartmentId}")]
-        public ActionResult Create(int id, Testimonial TestimonialInfo)
+        [Authorize(Roles = "admin,user")]
+        public ActionResult Create(int id, Testimonial TestimonialInfo, HttpPostedFileBase TestimonialPic)
         {
+            GetApplicationCookie();
+            TestimonialInfo.Id = User.Identity.GetUserId();
             string url = "TestimonialData/AddTestimonial/" + id;
             HttpContent content = new StringContent(jss.Serialize(TestimonialInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -75,6 +105,16 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             if (response.IsSuccessStatusCode)
             {
                 int Id = response.Content.ReadAsAsync<int>().Result;
+                //only attempt to send Movie picture data if we have it
+                if (TestimonialPic != null)
+                {
+                    //Send over image data for movie
+                    url = "TestimonialData/UpdateTestimonialPic/" + Id;
+                    MultipartFormDataContent requestcontent = new MultipartFormDataContent();
+                    HttpContent imagecontent = new StreamContent(TestimonialPic.InputStream);
+                    requestcontent.Add(imagecontent, "TestimonialPic", TestimonialPic.FileName);
+                    response = client.PostAsync(url, requestcontent).Result;
+                }
                 return RedirectToAction("DetailsofDepartment", "Department", new { Id = id });
             }
             else
@@ -98,6 +138,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpGet]
+        [Authorize(Roles = "admin,user")]
         public ActionResult UpdateTestimonial(int TestimonialId, int DepartmentId)
         {
             TestimonialDetails Testimonial_Details = new TestimonialDetails();
@@ -137,14 +178,26 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpPost]
-        public ActionResult UpdateTestimonial(TestimonialDetails TestimonialDetails)
+        [Authorize(Roles = "admin,user")]
+        public ActionResult UpdateTestimonial(TestimonialDetails TestimonialDetails, HttpPostedFileBase TestimonialPic)
         {
+            GetApplicationCookie();
+
             string url = "TestimonialData/UpdateTestimonial/" + TestimonialDetails.DepartmentDto.DepartmentId + "/" + TestimonialDetails.TestimonialDto.testimonial_Id;
             HttpContent content = new StringContent(jss.Serialize(TestimonialDetails.TestimonialDto));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
+                if (TestimonialPic != null)
+                {
+                    //Send over image data for movie
+                    url = "TestimonialData/UpdateTestimonialPic/" + TestimonialDetails.TestimonialDto.testimonial_Id;
+                    MultipartFormDataContent requestcontent = new MultipartFormDataContent();
+                    HttpContent imagecontent = new StreamContent(TestimonialPic.InputStream);
+                    requestcontent.Add(imagecontent, "TestimonialPic", TestimonialPic.FileName);
+                    response = client.PostAsync(url, requestcontent).Result;
+                }
                 return RedirectToAction("DetailsofDepartment", "Department", new { Id = TestimonialDetails.DepartmentDto.DepartmentId });
             }
             else
@@ -167,6 +220,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </example>
 
         [HttpGet]
+        [Authorize(Roles = "admin,user")]
         public ActionResult DeleteConfirm(int DepartmentId, int TestimonialId)
         {
             TestimonialDetails Testimonial_Details = new TestimonialDetails();
@@ -206,8 +260,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         [HttpPost]
         [Route("Testimonial/DeleteTestimonial/{TestimonialId}/{DepartmentId}")]
+        [Authorize(Roles = "admin,user")]
         public ActionResult DeleteTestimonial(int TestimonialId, int DepartmentId)
         {
+            GetApplicationCookie();
             string url = "TestimonialData/DeleteTestimonial/" + TestimonialId;
             HttpContent content = new StringContent("");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
