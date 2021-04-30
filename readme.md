@@ -101,10 +101,10 @@ All views inside /Views/Ecards directory
 - Pictures of the UI screens shown below
   
 ![Departments](Content/JerrinImages/DepartmentsPage1.png)
-![Departments2](Content/JerrinImages/Departments.png)
+![NextPageDepartments](Content/JerrinImages/Nextdepartments.png)
 ![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
-![Testimonial](Content/JerrinImages/EditTestimonial.png)
-![DepartmentsDetailsIpad](Content/JerrinImages/DepartmentDetailsIpad.png)
+![Testimonial](Content/JerrinImages/Testimonial.png)
+
 
 
 ### Controllers
