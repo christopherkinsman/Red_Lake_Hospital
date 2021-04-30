@@ -104,7 +104,7 @@ All views inside /Views/Ecards directory
 ![NextPageDepartments](Content/JerrinImages/Nextdepartments.png)
 ![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
 ![Testimonial](Content/JerrinImages/EditTestimonial.png)
-
+![DepartmentsDetailsIpad](Content/JerrinImages/DepartmentDetailsIpad.png)
 
 
 ### Controllers
