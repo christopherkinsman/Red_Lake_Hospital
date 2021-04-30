@@ -103,7 +103,7 @@ All views inside /Views/Ecards directory
 ![Departments](Content/JerrinImages/DepartmentsPage1.png)
 ![NextPageDepartments](Content/JerrinImages/Nextdepartments.png)
 ![DepartmentsDetailsWeb](Content/JerrinImages/DepartmentDetailsWeb.png)
-![Testimonial](Content/JerrinImages/Testimonial.png)
+![Testimonial](Content/JerrinImages/EditTestimonial.png)
 
 
 
