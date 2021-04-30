@@ -44,7 +44,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                     lname = Feedback.lname,
                     email = Feedback.email,
                     title = Feedback.title,
-                    text = Feedback.text
+                    text = Feedback.text,
+                    DepartmentName = Feedback.Department.DepartmentName
                 };
                 FeedbackDtos.Add(NewFeedback);
             }
@@ -76,7 +77,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
                 lname = Feedback.lname,
                 email = Feedback.email,
                 title = Feedback.title,
-                text = Feedback.text
+                text = Feedback.text,
+                DepartmentName = Feedback.Department.DepartmentName
             };
             return Ok(FeedbackDto);
         }

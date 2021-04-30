@@ -11,6 +11,7 @@ using System.Net.Http.Headers;
 using System.Diagnostics;
 using System.Web.Script.Serialization;
 using System.Net;
+using Microsoft.AspNet.Identity;
 
 namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 {
@@ -24,7 +25,6 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             HttpClientHandler handler = new HttpClientHandler()
             {
                 AllowAutoRedirect = false,
-
                 UseCookies = false
             };
             client = new HttpClient(handler)
@@ -36,19 +36,42 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        private void GetApplicationCookie()
+        //This is an authorize class used to redirect the user if they are an admin
+        //https://forums.asp.net/t/2039316.aspx?Change+redirect+page+when+user+is+unauthorized
+        public class ListRedirect : AuthorizeAttribute
         {
-            string token = "";
-            client.DefaultRequestHeaders.Remove("Cookie");
-            if (!User.Identity.IsAuthenticated) return;
+            public override void OnAuthorization(AuthorizationContext filterContext)
+            {
+                // If they are authorized, handle accordingly
+                if (this.AuthorizeCore(filterContext.HttpContext))
+                {
+                    base.OnAuthorization(filterContext);
+                }
+                else
+                {
+                    // Otherwise redirect to your specific authorized area
+                    filterContext.Result = new RedirectResult("AdminList");
+                }
+            }
+        }
 
-            HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(".AspNet.ApplicationCookie");
-            if (cookie != null) token = cookie.Value;
-
-            Debug.WriteLine("Token Submitted is : " + token);
-            if (token != "") client.DefaultRequestHeaders.Add("Cookie", ".AspNet.ApplicationCookie=" + token);
-
-            return;
+        //This is an authorize class used to redirect the user if they are an admin
+        //https://forums.asp.net/t/2039316.aspx?Change+redirect+page+when+user+is+unauthorized
+        public class ShowRedirect : AuthorizeAttribute
+        {
+            public override void OnAuthorization(AuthorizationContext filterContext)
+            {
+                // If they are authorized, handle accordingly
+                if (this.AuthorizeCore(filterContext.HttpContext))
+                {
+                    base.OnAuthorization(filterContext);
+                }
+                else
+                {
+                    // Otherwise redirect to your specific authorized area
+                    filterContext.Result = new RedirectResult("AdminShow");
+                }
+            }
         }
 
         /// <summary>
@@ -77,10 +100,10 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </summary>
         /// <returns>A dynamic "Blog List" webpage which provides a list of all blogs in the database and admin options.</returns>
         /// <example>GET : /Blog/AdminList</example>
-        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        [Authorize(Roles = "admin")]
         public ActionResult AdminList()
         {
-            GetApplicationCookie();
 
             string url = "blogapi/getblogs";
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -124,10 +147,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <param name="id">Id of the Blog</param>
         /// <returns>A dynamic "Blog Show" webpage which provides detailes for a selected blog.</returns>
         /// <example>GET : /Blog/Show/5</example>
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult AdminShow(int id)
         {
-            GetApplicationCookie();
 
             ShowBlogViewModel ViewModel = new ShowBlogViewModel();
             string url = "blogapi/findblog/" + id;
@@ -149,11 +171,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// </summary>
         /// <returns>A dynamic "Blog Create" webpage which can add a blog entry to the database.</returns>
         /// <example>GET : /Blog/Create</example>
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
-            GetApplicationCookie();
-
             return View();
         }
 
@@ -164,10 +184,20 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <example>GET : /Blog/Create</example>
         [HttpPost]
         [ValidateAntiForgeryToken()]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Create(BlogModel BlogInfo)
+        [Authorize(Roles = "admin")]
+        public ActionResult Create(BlogModel Blog)
         {
-            GetApplicationCookie();
+
+            BlogModel BlogInfo = new BlogModel
+            {
+                blog_id = Blog.blog_id,
+                date = Blog.date,
+                photo_path = Blog.photo_path,
+                title = Blog.title,
+                text = Blog.text,
+                email = Blog.email,
+                ApplicationUserId = User.Identity.GetUserId()
+            };
 
             Debug.WriteLine(BlogInfo.title);
             string url = "blogapi/addblog";
@@ -178,7 +208,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("List");
+                return RedirectToAction("AdminList");
             }
             else
             {
@@ -193,11 +223,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <param name="id">Id of the Blog</param>
         /// <returns>A dynamic "Blog Show" webpage which provides a form to input new blog information.</returns>
         /// <example>GET : /Blog/Update/5</example>
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult Update(int id)
         {
-            GetApplicationCookie();
-
             UpdateBlogViewModel ViewModel = new UpdateBlogViewModel();
 
             string url = "blogapi/findblog/" + id;
@@ -223,10 +251,19 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <example>GET : /Blog/Update/5</example>
         [HttpPost]
         [ValidateAntiForgeryToken()]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Update(int id, BlogDto BlogInfo)
+        [Authorize(Roles = "admin")]
+        public ActionResult Update(int id, BlogDto Blog)
         {
-            GetApplicationCookie();
+            BlogModel BlogInfo = new BlogModel
+            {
+                blog_id = Blog.blog_id,
+                date = Blog.date,
+                photo_path = Blog.photo_path,
+                title = Blog.title,
+                text = Blog.text,
+                email = Blog.email,
+                ApplicationUserId = User.Identity.GetUserId()
+            };
 
             string url = "blogapi/updateblog/" + id;
             HttpContent content = new StringContent(jss.Serialize(BlogInfo));
@@ -235,7 +272,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("Show", new { id });
+                return RedirectToAction("AdminShow", new { id });
             }
             else
             {
@@ -252,11 +289,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <returns>A dynamic "Blog Show" webpage which provides information on a blog that can be deleted.</returns>
         /// <example>GET : /Blog/Delete/5</example>
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirm(int id)
         {
-            GetApplicationCookie();
-
             string url = "blogapi/findblog/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
@@ -277,18 +312,16 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <returns>A dynamic "Blog Show" webpage which provides information on a blog that can be deleted.</returns>
         /// <example>GET : /Blog/Delete/5</example>
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
 
         public ActionResult Delete(int id)
         {
-            GetApplicationCookie();
-
             string url = "blogapi/deleteblog/" + id;
             HttpContent content = new StringContent("");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("List");
+                return RedirectToAction("AdminList");
             }
             else
             {

@@ -1,0 +1,15 @@
+﻿#list {
+    table-layout: fixed;
+}
+
+#list td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#show td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+}

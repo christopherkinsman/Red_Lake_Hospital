@@ -1,70 +1,74 @@
-﻿@model Red_Lake_Hospital_Redesign_Team6.Models.FeedbackDto
+﻿@model Red_Lake_Hospital_Redesign_Team6.Models.ViewModels.UpdateFeedbackViewModel
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-<div class="navbar">
-    <a class="navlink" href="/Feedback/AdminList">Back</a>
-</div>
+<h2>Feedback Form</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>Team</h4>
-    <hr />
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(model => model.fname, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.feedback.fname, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.fname, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.fname, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.feedback.fname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback.fname, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.lname, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.feedback.lname, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.lname, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.lname, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.feedback.lname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback.lname, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.feedback.email, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.feedback.email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback.email, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.feedback.title, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.feedback.title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback.title, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.text, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.feedback.text, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.text, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.text, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.feedback.text, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback.text, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    @Html.Hidden("DepartmentId", 1)
-
-    @Html.Hidden("date", DateTime.Now)
+    <div class="form-group">
+        <label for="DepartmentId" class="control-label col-md-2">Feedback Department</label>
+        <div class="col-md-10">
+            <select name="DepartmentId" class="form-control">
+                @foreach (var department in Model.departments)
+                {
+                    <option value="@department.DepartmentId">@department.DepartmentName</option>
+                }
+            </select>
+        </div>
+    </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Submit" class="btn btn-default" />
         </div>
     </div>
 </div>

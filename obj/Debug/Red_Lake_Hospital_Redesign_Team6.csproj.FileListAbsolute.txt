@@ -733,6 +733,357 @@ C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debu
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
 C:\Users\Kunal Sailor\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.ContactUsFeatureKunalSailor.resources
 C:\Users\Kunal Sailor\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.EcardsFeatureKunalSailor.resources
+<<<<<<< HEAD
+=======
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll.config
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csc.exe
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csc.exe.config
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csc.rsp
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csi.exe
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csi.exe.config
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\csi.rsp
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.AppContext.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Console.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.Compression.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Http.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.ValueTuple.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\vbc.exe
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\vbc.exe.config
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\vbc.rsp
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Antlr3.Runtime.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Newtonsoft.Json.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Owin.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Net.Http.Formatting.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Helpers.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.WebHost.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Mvc.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Optimization.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Razor.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\WebGrease.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Helpers.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Mvc.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Optimization.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Razor.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Newtonsoft.Json.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Antlr3.Runtime.pdb
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Net.Http.Formatting.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Http.WebHost.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csprojAssemblyReference.cache
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.FirstMigration.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphoto2021.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphotopart2.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.migrationFAQMarch282021.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation_2.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration1.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.Add_models_from_team_members_to_db.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.ContactUsFeatureKunalSailor.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.EcardsFeatureKunalSailor.resources
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.GenerateResource.cache
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CoreCompileInputs.cache
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\Jerrin Eldo\source\repos\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Red_Lake_Hospital_Redesign_Team6.dll.config
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csc.exe
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csc.exe.config
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csc.rsp
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csi.exe
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csi.exe.config
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\csi.rsp
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.AppContext.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Console.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.IO.Compression.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Net.Http.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Net.Sockets.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.ValueTuple.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Xml.XPath.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\vbc.exe
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\vbc.exe.config
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\vbc.rsp
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\VBCSCompiler.exe
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Antlr3.Runtime.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\EntityFramework.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\EntityFramework.SqlServer.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Newtonsoft.Json.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Owin.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Net.Http.Formatting.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Helpers.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Http.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Http.WebHost.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Mvc.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Optimization.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Razor.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.Deployment.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.Razor.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\WebGrease.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\EntityFramework.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\EntityFramework.SqlServer.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Helpers.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Mvc.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Optimization.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Razor.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.Deployment.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.WebPages.Razor.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Newtonsoft.Json.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Antlr3.Runtime.pdb
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Net.Http.Formatting.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Http.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\System.Web.Http.WebHost.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csprojAssemblyReference.cache
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.FirstMigration.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphoto2021.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphotopart2.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.migrationFAQMarch282021.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation_2.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration1.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.Add_models_from_team_members_to_db.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.ContactUsFeatureKunalSailor.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.EcardsFeatureKunalSailor.resources
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.GenerateResource.cache
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CoreCompileInputs.cache
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\brady\Source\Repos\Red_Lake_Hospital_Project_ver2_Team6_HOPEFULLYFINAL\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csprojAssemblyReference.cache
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.FirstMigration.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphoto2021.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.faqphotopart2.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.migrationFAQMarch282021.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.donation_2.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blog_feedback_migration1.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.Add_models_from_team_members_to_db.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.ContactUsFeatureKunalSailor.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.EcardsFeatureKunalSailor.resources
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.GenerateResource.cache
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CoreCompileInputs.cache
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Red_Lake_Hospital_Redesign_Team6.dll.config
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Red_Lake_Hospital_Redesign_Team6.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Red_Lake_Hospital_Redesign_Team6.pdb
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csc.exe
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csc.exe.config
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csc.rsp
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csi.exe
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csi.exe.config
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\csi.rsp
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.AppContext.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Console.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.IO.Compression.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.ValueTuple.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\vbc.exe
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\vbc.exe.config
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\vbc.rsp
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\VBCSCompiler.exe
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\EntityFramework.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\EntityFramework.SqlServer.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Helpers.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Mvc.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Optimization.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Razor.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.WebPages.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.WebPages.Razor.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Newtonsoft.Json.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Antlr3.Runtime.pdb
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Net.Http.Formatting.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Http.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\System.Web.Http.WebHost.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
+C:\Users\Deus\source\repos\Red_Lake_Hospital_Redesign_Team6_with_complete_working_models_April_10_2021\bin\EasyEncryption.dll
+C:\Users\Kunal Sailor\source\repos\Red_Lake_Hospital_Project_ver2_Team6\bin\EasyEncryption.dll
+>>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll.config
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.pdb
@@ -765,7 +1116,10 @@ C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Pro
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.IO.FileSystem.Primitives.dll
+<<<<<<< HEAD
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Http.dll
+=======
+>>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -785,6 +1139,7 @@ C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Pro
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\vbc.rsp
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\roslyn\VBCSCompiler.exe.config
+<<<<<<< HEAD
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Antlr3.Runtime.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.dll
@@ -815,6 +1170,9 @@ C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Pro
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.WebPages.Razor.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\WebGrease.dll
+=======
+C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\EasyEncryption.dll
+>>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\EntityFramework.SqlServer.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\System.Web.Helpers.xml
@@ -835,7 +1193,10 @@ C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Pro
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.xml
+<<<<<<< HEAD
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Facebook.xml
+=======
+>>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Microsoft.Owin.Security.Twitter.xml
@@ -859,6 +1220,7 @@ C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Pro
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.dll
 C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
+<<<<<<< HEAD
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll.config
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.dll
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\bin\Red_Lake_Hospital_Redesign_Team6.pdb
@@ -985,3 +1347,7 @@ C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.csproj.CopyComplete
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.dll
 C:\Users\Chris\Desktop\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.pdb
+=======
+C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.blogupdate.resources
+C:\Users\Chris\Source\Repos\Team6-RedLakeHospital-Redesign\Red_Lake_Hospital_Project_ver2_Team6\obj\Debug\Red_Lake_Hospital_Redesign_Team6.Migrations.FEEDBACKUPDATE.resources
+>>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888
