@@ -4,16 +4,21 @@
     ViewBag.Title = "List";
 }
 
+<link href="~/Content/blog.css" rel="stylesheet" type="text/css">
+
 <h2>Blog List</h2>
 
 <div class="navbar">
     <a class="navlink" href="/Blog/Create">New Blog Entry</a>
 </div>
 
-<table class="table">
+<table class="table" id="list">
     <tr>
         <th>
-            Id
+            Blog Id
+        </th>
+        <th>
+            Author Id
         </th>
         <th>
             Title
@@ -25,7 +30,6 @@
             Email
         </th>
         <th></th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -33,6 +37,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.blog_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.title)

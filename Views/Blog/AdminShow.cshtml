@@ -4,6 +4,8 @@
     ViewBag.Title = "Show";
 }
 
+<link href="~/Content/blog.css" rel="stylesheet" type="text/css">
+
 <h2>@Model.Blog.title</h2>
 <div class="navbar">
     <a class="navlink" href="/Blog/AdminList">Back</a><br>
@@ -12,19 +14,13 @@
 </div>
 
 <div style="overflow:hidden;">
-    <table>
-        <tr>
-            <td>
-                ID :
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.Blog.blog_id)
-            </td>
-        </tr>
+    <table id="show">
         <tr>
             <td>
                 @Html.DisplayNameFor(model => model.Blog.title) :
             </td>
+        </tr>
+        <tr>
             <td>
                 @Html.DisplayFor(model => model.Blog.title)
             </td>
@@ -33,6 +29,8 @@
             <td>
                 @Html.DisplayNameFor(model => model.Blog.text) :
             </td>
+        </tr>
+        <tr>
             <td>
                 @Html.DisplayFor(model => model.Blog.text)
             </td>
@@ -41,6 +39,8 @@
             <td>
                 @Html.DisplayNameFor(model => model.Blog.email) :
             </td>
+        </tr>
+        <tr>
             <td>
                 @Html.DisplayFor(model => model.Blog.email)
             </td>

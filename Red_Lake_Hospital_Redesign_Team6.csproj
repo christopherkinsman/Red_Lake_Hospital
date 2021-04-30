@@ -260,6 +260,14 @@
     <Compile Include="Migrations\202104111519080_E-cards Feature - Kunal Sailor.Designer.cs">
       <DependentUpon>202104111519080_E-cards Feature - Kunal Sailor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104301955152_blog-update.cs" />
+    <Compile Include="Migrations\202104301955152_blog-update.Designer.cs">
+      <DependentUpon>202104301955152_blog-update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104302002437_FEEDBACK-UPDATE.cs" />
+    <Compile Include="Migrations\202104302002437_FEEDBACK-UPDATE.Designer.cs">
+      <DependentUpon>202104302002437_FEEDBACK-UPDATE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Authentication.cs" />
@@ -297,6 +305,7 @@
     <Compile Include="Models\ViewModels\UpdateContact.cs" />
     <Compile Include="Models\ViewModels\UpdateDonation.cs" />
     <Compile Include="Models\ViewModels\UpdateFaq.cs" />
+    <Compile Include="Models\ViewModels\UpdateFeedback.cs" />
     <Compile Include="Models\ViewModels\UpdateFeedbackViewModel.cs" />
     <Compile Include="Models\ViewModels\UpdatePhoto.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
@@ -403,6 +412,7 @@
     <Content Include="bin\System.Web.WebPages.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\blog.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -813,10 +823,7 @@
     <Content Include="Views\Feedback\List.cshtml" />
     <Content Include="Views\Feedback\Show.cshtml" />
     <Content Include="Views\Feedback\Create.cshtml" />
-    <Content Include="Views\Feedback\Update.cshtml" />
     <Content Include="Views\Feedback\DeleteConfirm.cshtml" />
-    <Content Include="Views\Feedback\AdminList.cshtml" />
-    <Content Include="Views\Feedback\AdminShow.cshtml" />
     <Content Include="Views\Donation\Details.cshtml" />
     <Content Include="Views\Testimonial\Create.cshtml" />
     <Content Include="Views\Testimonial\DeleteConfirm.cshtml" />
@@ -846,6 +853,7 @@
     <Content Include="Views\Donor\DeleteConfirm.cshtml" />
     <Content Include="Views\Donor\Details.cshtml" />
     <Content Include="Views\Donation\Edit.cshtml" />
+    <Content Include="Views\Feedback\CreateConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -853,8 +861,6 @@
     <Folder Include="Views\BlogApi\" />
     <Folder Include="Views\FeedbackApi\" />
     <Folder Include="Views\JobsApi\" />
-    <Folder Include="Views\ShowFeedbackViewModel\" />
-    <Folder Include="Views\UpdateFeedbackViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -902,6 +908,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104111519080_E-cards Feature - Kunal Sailor.resx">
       <DependentUpon>202104111519080_E-cards Feature - Kunal Sailor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104301955152_blog-update.resx">
+      <DependentUpon>202104301955152_blog-update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104302002437_FEEDBACK-UPDATE.resx">
+      <DependentUpon>202104302002437_FEEDBACK-UPDATE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

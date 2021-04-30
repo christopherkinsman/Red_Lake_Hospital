@@ -132,3 +132,41 @@ UpdateFaq.cs <br />
 All views inside /Views/Faq directory
 ## Views for Photos
 All views inside /Views/Photo directory
+
+## Chris's Contributions - Blog and Feedback Features
+
+### Changes for Final Submission
+- Added department option for the feedback feature
+- Added user id to the blof feature
+
+#### Files Changed or Added for Final Submission
+- /Controllers/BlogController.cs
+- /Controllers/FeedbackApiController.cs
+- /Controller/FeedbackController.cs
+- /Views/Blog/AdminList.cshtml
+- /Views/Blog/AdminShow.cshtml
+- /Views/Blog/Create.cshtml
+- /Views/Blog/Show.cshtml
+- /Views/Blog/Update.cshtml
+- /Views/Feedback/Create.cshtml
+- /Views/Feedback/Delete.cshtml
+- /Views/Feedback/List.cshtml
+- /Views/Feedback/Show.cshtml
+
+### Controllers
+BlogController.cs <br />
+BlogApiController.cs <br />
+FeedbackController.cs <br />
+FeedbackApiController.cs <br />
+
+### Models and ViewModels
+BlogModel.cs <br />
+ShowBlogViewModel.cs <br />
+UpdateBlogViewModel.cs <br />
+FeedbackModel.cs <br />
+ShowFeedbackViewModel.cs <br />
+UpdateFeedbackViewModel.cs <br />
+
+### Views
+All views inside /Views/Blog directory<br />
+All views inside /Views/Feedback directory<br />

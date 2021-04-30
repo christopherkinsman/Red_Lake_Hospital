@@ -19,8 +19,6 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public string email { get; set; }
         public string title { get; set; }
         public string text { get; set; }
-
-        [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         public virtual DepartmentsModel Department { get; set; }
     }
@@ -34,6 +32,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
         public string title { get; set; }
         public string text { get; set; }
         public int DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
 
     }
 }

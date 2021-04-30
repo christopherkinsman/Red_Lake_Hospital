@@ -6,14 +6,15 @@
 
 <h2>@Model.Feedback.title</h2>
 <div class="navbar">
-    <a class="navlink" href="/Feedback/List">Back</a>
+    <a class="navlink" href="/Feedback/List">Back</a><br>
+    <a class="navlink" href="/Feedback/DeleteConfirm/@Model.Feedback.feedback_id">Delete</a>
 </div>
 
 <div style="overflow:hidden;">
     <table>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Feedback.fname) :
+                First Name : 
             </td>
             <td>
                 @Html.DisplayFor(model => model.Feedback.fname)
@@ -21,7 +22,7 @@
         </tr>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Feedback.lname) :
+                Last Name : 
             </td>
             <td>
                 @Html.DisplayFor(model => model.Feedback.lname)
@@ -29,7 +30,7 @@
         </tr>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Feedback.email) :
+                Email :
             </td>
             <td>
                 @Html.DisplayFor(model => model.Feedback.email)
@@ -37,7 +38,7 @@
         </tr>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Feedback.title) :
+                Title : 
             </td>
             <td>
                 @Html.DisplayFor(model => model.Feedback.title)
@@ -45,11 +46,20 @@
         </tr>
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Feedback.text) :
+                Text :
             </td>
             <td>
                 @Html.DisplayFor(model => model.Feedback.text)
             </td>
         </tr>
+        <tr>
+            <td>
+                Department : 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Feedback.DepartmentName)
+            </td>
+        </tr>
     </table>
 </div>
+

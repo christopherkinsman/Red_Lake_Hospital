@@ -24,7 +24,6 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             HttpClientHandler handler = new HttpClientHandler()
             {
                 AllowAutoRedirect = false,
-
                 UseCookies = false
             };
             client = new HttpClient(handler)
@@ -36,53 +35,15 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        private void GetApplicationCookie()
-        {
-            string token = "";
-            client.DefaultRequestHeaders.Remove("Cookie");
-            if (!User.Identity.IsAuthenticated) return;
-
-            HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(".AspNet.ApplicationCookie");
-            if (cookie != null) token = cookie.Value;
-
-            Debug.WriteLine("Token Submitted is : " + token);
-            if (token != "") client.DefaultRequestHeaders.Add("Cookie", ".AspNet.ApplicationCookie=" + token);
-
-            return;
-        }
-
         /// <summary>
         /// Routes to a dynamically generated "Feedback List" Page. Gathers information from the database.
         /// </summary>
         /// <returns>A dynamic "Feedback List" webpage which provides a list of all blogs in the database.</returns>
         /// <example>GET : /Feedback/List</example>
         // GET: Blog/List
+        [Authorize(Roles = "admin")]
         public ActionResult List()
         {
-            string url = "feedbackapi/getfeedback";
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                IEnumerable<FeedbackDto> SelectedFeedback = response.Content.ReadAsAsync<IEnumerable<FeedbackDto>>().Result;
-                return View(SelectedFeedback);
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
-        }
-
-        /// <summary>
-        /// Routes to a dynamically generated "Feedback AdminList" Page. Gathers information from the database.
-        /// </summary>
-        /// <returns>A dynamic "Feedback List" webpage which provides a list of all blogs in the database and admin options.</returns>
-        /// <example>GET : /Feedback/AdminList</example>
-        // GET: Blog/List
-        [Authorize(Roles = "Admin")]
-        public ActionResult AdminList()
-        {
-            GetApplicationCookie();
-
             string url = "feedbackapi/getfeedback";
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
@@ -102,6 +63,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <param name="id">Id of the Feedback</param>
         /// <returns>A dynamic "Feedback Show" webpage which provides detailes for a selected blog.</returns>
         /// <example>GET : /Feedback/Show/5</example>
+        [Authorize(Roles = "admin")]
         public ActionResult Show(int id)
         {
             ShowFeedbackViewModel ViewModel = new ShowFeedbackViewModel();
@@ -120,41 +82,24 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         }
 
         /// <summary>
-        /// Routes to a dynamically generated "Feedback AdminShow" Page. Gathers information from the database.
-        /// </summary>
-        /// <param name="id">Id of the Feedback</param>
-        /// <returns>A dynamic "Feedback Show" webpage which provides detailes for a selected Feedback.</returns>
-        /// <example>GET : /Feedback/Show/5</example>
-        [Authorize(Roles = "Admin")]
-        public ActionResult AdminShow(int id)
-        {
-            GetApplicationCookie();
-
-            ShowFeedbackViewModel ViewModel = new ShowFeedbackViewModel();
-            string url = "feedbackapi/findfeedback/" + id;
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                FeedbackDto SelectedBlogs = response.Content.ReadAsAsync<FeedbackDto>().Result;
-                ViewModel.Feedback = SelectedBlogs;
-                return View(ViewModel);
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
-        }
-
-        /// <summary>
         /// Routes to a dynamically generated "Feedback Create" Page. Adds information from the database.
         /// </summary>
         /// <returns>A dynamic "Feedback Create" webpage which can add a blog entry to the database.</returns>
         /// <example>GET : /Feedback/Create</example>
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
-            GetApplicationCookie();
+            UpdateFeedbackViewModel ViewModel = new UpdateFeedbackViewModel();
+            string url = "departmentsdata/getdepartments";
 
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            IEnumerable<DepartmentsDto> PotentialDepartments = response.Content.ReadAsAsync<IEnumerable<DepartmentsDto>>().Result;
+            ViewModel.departments = PotentialDepartments;
+
+            return View(ViewModel);
+        }
+
+        public ActionResult CreateConfirm()
+        {
             return View();
         }
 
@@ -165,83 +110,35 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <example>GET : /Feedback/Create</example>
         [HttpPost]
         [ValidateAntiForgeryToken()]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Create(FeedbackModel FeedbackInfo)
+        public ActionResult Create(UpdateFeedbackViewModel FeedbackViewInfo)
         {
-            GetApplicationCookie();
 
-            Debug.WriteLine(FeedbackInfo.title);
+            FeedbackModel FeedbackInfo = new FeedbackModel
+            {
+                feedback_id = FeedbackViewInfo.feedback.feedback_id,
+                date = DateTime.Now,
+                fname = FeedbackViewInfo.feedback.fname,
+                lname = FeedbackViewInfo.feedback.lname,
+                email = FeedbackViewInfo.feedback.email,
+                title = FeedbackViewInfo.feedback.title,
+                text = FeedbackViewInfo.feedback.text,
+                DepartmentId = FeedbackViewInfo.DepartmentId
+            };
+
             string url = "feedbackapi/addfeedback";
-            Debug.WriteLine(jss.Serialize(FeedbackInfo));
             HttpContent content = new StringContent(jss.Serialize(FeedbackInfo));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("List");
+                return RedirectToAction("CreateConfirm");
             }
             else
             {
                 return RedirectToAction("Error");
             }
 
-        }
-
-        /// <summary>
-        /// Routes to a dynamically generated "Feedback Update" Page. Gathers information from the database.
-        /// </summary>
-        /// <param name="id">Id of the Feedback</param>
-        /// <returns>A dynamic "Feedback Show" webpage which provides a form to input new blog information.</returns>
-        /// <example>GET : /Feedback/Update/5</example>
-        [Authorize(Roles = "Admin")]
-        public ActionResult Update(int id)
-        {
-            GetApplicationCookie();
-
-            UpdateFeedbackViewModel ViewModel = new UpdateFeedbackViewModel();
-
-            string url = "feedbackapi/findfeedback/" + id;
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                FeedbackDto SelectedFeedback = response.Content.ReadAsAsync<FeedbackDto>().Result;
-                ViewModel.Feedback = SelectedFeedback;
-
-                return View(ViewModel);
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
-        }
-
-        /// <summary>
-        /// Routes to a dynamically generated "Feedback Update" Page. Gathers information from the database.
-        /// </summary>
-        /// <param name="id">Id of the Feedback</param>
-        /// <returns>A dynamic "Feedback Show" webpage which provides a form to input new blog information.</returns>
-        /// <example>GET : /Feedback/Update/5</example>
-        [HttpPost]
-        [ValidateAntiForgeryToken()]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Update(int id, FeedbackDto FeedbackInfo)
-        {
-            GetApplicationCookie();
-
-            string url = "feedbackapi/updatefeedback/" + id;
-            HttpContent content = new StringContent(jss.Serialize(FeedbackInfo));
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                return RedirectToAction("Show", new { id });
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
         }
 
 
@@ -253,11 +150,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <returns>A dynamic "Feedback Show" webpage which provides information on a blog that can be deleted.</returns>
         /// <example>GET : /Feedback/Delete/5</example>
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirm(int id)
         {
-            GetApplicationCookie();
-
             string url = "feedbackapi/findfeedback/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
@@ -278,18 +173,15 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         /// <returns>A dynamic "Feedback Show" webpage which provides information on a blog that can be deleted.</returns>
         /// <example>GET : /Feedback/Delete/5</example>
         [HttpPost]
-        [Authorize(Roles = "Admin")]
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id)
         {
-            GetApplicationCookie();
-
             string url = "feedbackapi/deletefeedback/" + id;
             HttpContent content = new StringContent("");
             HttpResponseMessage response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("AdminList");
+                return RedirectToAction("List");
             }
             else
             {
