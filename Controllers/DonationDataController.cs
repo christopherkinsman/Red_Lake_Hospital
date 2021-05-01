@@ -45,7 +45,8 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         [ResponseType(typeof(IEnumerable<DonationDto>))]
         public IHttpActionResult GetDonations()
         {
-            List<Donation> Donations = db.Donations.ToList();
+            //List<Donation> Donations = db.Donations.ToList();
+            IEnumerable<Donation> Donations = db.Donations.ToList();
             List<DonationDto> DonationDtos = new List<DonationDto> { };
 
             //Here you can choose which information is exposed to the API
@@ -74,22 +75,96 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
 
 
-        // GET: api/DonationData/5
-        [ResponseType(typeof(Donation))]
-        public IHttpActionResult GetDonation(int id)
+        // GET: api/DonationData/FindDonation/5
+        [HttpGet]
+        [ResponseType(typeof(DonationDto))]
+        public IHttpActionResult FindDonation(int id)
         {
-            Donation donation = db.Donations.Find(id);
-            if (donation == null)
+            //find donation data
+            Donation Donation = db.Donations.Find(id);
+            if (Donation == null)
             {
                 return NotFound();
             }
 
-            return Ok(donation);
+            //Put into Dto form
+
+            DonationDto DonationDto = new DonationDto
+            {
+                DonationId = Donation.DonationId,
+                Date = Donation.Date,
+                Amount = Donation.Amount,
+                OneTime = Donation.OneTime,
+                Msg = Donation.Msg,
+                Dedication = Donation.Dedication,
+                DedicateName = Donation.DedicateName,
+                Action = Donation.Action,
+                Anonymity = Donation.Anonymity,
+                PaymentMethod = Donation.PaymentMethod,
+                PaymentNumber = Donation.PaymentNumber,
+                DonorId = Donation.DonorId
+            };
+
+            return Ok(DonationDto);
         }
 
-        // PUT: api/DonationData/5
+        /// <summary>
+        /// Finds a particular Donor in the database given a donation id with a 200 status code. If the Donor is not found, return 404.
+        /// </summary>
+        /// <param name="id">The donation id</param>
+        /// <returns>Information about the Donor, including Donor id, and all the other columns in DonorDto</returns>
+        // <example>
+        // GET: api/DonorData/FindDonorForDonation/5
+        // </example>
+        [HttpGet]
+        [ResponseType(typeof(DonorDto))]
+        public IHttpActionResult FindDonorForDonation(int id)
+        {
+            //Finds the first team which has any players
+            //that match the input playerid
+            Donor Donor = db.Donors
+                .Where(dn => dn.Donations.Any(dnt => dnt.DonationId == id))
+                .FirstOrDefault();
+            //if not found, return 404 status code.
+            if (Donor == null)
+            {
+                return NotFound();
+            }
+
+            //put into a 'friendly object format'
+            DonorDto DonorDto = new DonorDto
+            {
+                DonorId = Donor.DonorId,
+                Email = Donor.Email,
+                Type = Donor.Type,
+                OrgName = Donor.OrgName,
+                Fname = Donor.Fname,
+                Lname = Donor.Lname,
+                Addressl1 = Donor.Addressl1,
+                Addressl2 = Donor.Addressl2,
+                City = Donor.City,
+                Country = Donor.Country,
+                Province = Donor.Province,
+                PostalCode = Donor.PostalCode
+            };
+
+            //pass along data as 200 status code OK response
+            return Ok(DonorDto);
+        }
+
+        /// <summary>
+        /// Updates a donation in the database given information about the donation.
+        /// </summary>
+        /// <param name="id">The donation id</param>
+        /// <param name="donation">A donation object. Received as POST data.</param>
+        /// <returns></returns>
+        /// <example>
+        /// POST: api/DonationData/UpdateDonation/5
+        /// FORM DATA: Donation JSON Object
+        /// </example>
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDonation(int id, Donation donation)
+        [HttpPost]
+        public IHttpActionResult UpdateDonation(int id, [FromBody] Donation donation)
         {
             if (!ModelState.IsValid)
             {
@@ -106,6 +181,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             try
             {
                 db.SaveChanges();
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -122,10 +198,20 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/DonationData
+        /// <summary>
+        /// Adds a donation to the database.
+        /// </summary>
+        /// <param name="donation">A donation object. Sent as POST form data.</param>
+        /// <returns>status code 200 if successful. 400 if unsuccessful</returns>
+        /// <example>
+        /// POST: api/DonationData/AddDonation
+        ///  FORM DATA: Donation JSON Object
+        /// </example>
         [ResponseType(typeof(Donation))]
-        public IHttpActionResult PostDonation(Donation donation)
+        [HttpPost]
+        public IHttpActionResult AddDonation([FromBody] Donation donation)
         {
+            //Will Validate according to data annotations specified on model
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -134,14 +220,21 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             db.Donations.Add(donation);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = donation.DonationId }, donation);
+            return Ok(donation.DonationId);
         }
 
-        // DELETE: api/DonationData/5
-        [ResponseType(typeof(Donation))]
+        /// <summary>
+        /// Deletes a donation in the database
+        /// </summary>
+        /// <param name="id">The id of the donation to delete.</param>
+        /// <returns>200 if successful. 404 if not successful.</returns>
+        /// <example>
+        /// POST: api/DonationData/DeleteDonation/5
+        /// </example>
+        [HttpPost]
         public IHttpActionResult DeleteDonation(int id)
         {
-            Donation donation = db.Donations.Find(id);
+            Donation donation= db.Donations.Find(id);
             if (donation == null)
             {
                 return NotFound();
@@ -150,7 +243,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             db.Donations.Remove(donation);
             db.SaveChanges();
 
-            return Ok(donation);
+            return Ok();
         }
 
         protected override void Dispose(bool disposing)
@@ -162,6 +255,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Finds a donation in the system. Internal use only.
+        /// </summary>
+        /// <param name="id">The donation id</param>
+        /// <returns>TRUE if the donation exists, false otherwise.</returns>
         private bool DonationExists(int id)
         {
             return db.Donations.Count(e => e.DonationId == id) > 0;

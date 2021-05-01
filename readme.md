@@ -1,22 +1,45 @@
-# Red Lake Hospital Project
+# Red Lake Hospital Project - Team 6
+
+- Admin Account: Usr: admin@admin.com Pass: Test123*
+- Regular User Account: Usr: user@user.com Pass: Test123*
+
+
 ## Nai-Hsien's Contributions - Online donation feature
-### Models 
+### Models/ViewModels 
 Models/Donation.cs <br />
 Models/Donor.cs <br />
+ViewModels/ShowDonation.cs
+ViewModels/UpdateDonation.cs
 ### Controllers
 Controllers/DonationDataController.cs <br />
 Controllers/DonationController.cs <br />
+Controllers/DonorDataController.cs <br />
 ### Views
-Views/Donation/Index.cshtml <br />
-Views/Donation/List.cshtml <br />
-Views/Donation/Edit.cshtml (not currently functioning) <br />
-Views/Donation/Details.cshtml (not currently functioning) <br />
-### debugging:
-Solving merging conflict <br />
-- see https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#removed-file-merge-conflicts
-- see also project folder: documentation.pdf
+all the views under donation and donor folders. All CRUD features are functioning now except for the following:
+Views/Donation/Edit.cshtml (not currently fully functioning) <br />
+
+### Debugging:
+1. Solving merging conflict <br />
+    - https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line#removed-file-merge-conflicts
+    - see also project folder: documentation.pdf
+2. Understanding how to work with git.ignore <br />
+    - https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio#ignore-files-only-on-your-system
 
 ## Gord's Contributions - Job Posting and Job Application Features
+
+### Changes for Final Submission
+- Implemented public-private key security for API controller resources
+- Created new API controller to distribute server's public key to clients
+- Split up JobsApiController by subject entities into JobsApplicationsApiController and JobPostingsApiController
+- Moved job posting list view's processing work to the API controller using option flags allowing the return of all job postings or only unexpired/current job postings
+
+#### Files Changed or Added for Final Submission
+- /Controllers/JobsViewController.cs
+- /Controllers/JobsApplicationsApiController.cs
+- /Controller/JobsPostingsApiController.cs
+- /Controller/PublicKeyDistributionController.cs
+- /Models/Authentication.cs
+- /Models/PublicKeyDto.cs
 
 ### Controllers
 Set up role and users <br />
@@ -35,6 +58,13 @@ All views inside /Views/JobView directory
 
 
 ## Kunal's Contributions - Contact Us and Send E-cards Features
+
+### Changes for final Submission 
+- Proper Commenting Added.
+- Added responsiveness to the features.
+- Customized HTML/CSS
+- Styling & Adding dynamic content to the home page (Shared/_Layout.cshtml)
+- Added adminstrator log in functionality to operate CRUD on admin side.
 
 ### Controllers
 ContactsController.cs <br />
@@ -56,8 +86,6 @@ EditEcard.cs <br />
 All views inside /Views/Contact directory
 ## Views for E-cards
 All views inside /Views/Ecards directory
-<<<<<<< HEAD
-=======
 
 ## Jerrin's Contributions - Department and Testimonial Features
 
@@ -142,4 +170,3 @@ UpdateFeedbackViewModel.cs <br />
 ### Views
 All views inside /Views/Blog directory<br />
 All views inside /Views/Feedback directory<br />
->>>>>>> 254ab1a4fe91efbf18da4f5bd67e0f87be17d888

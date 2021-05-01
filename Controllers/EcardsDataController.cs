@@ -17,7 +17,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/EcardsData/5
+
+        /// <summary>
+        /// The GetEcards method accesses the database to obtain a collection of all ecards listings and return the collection.
+        /// </summary>
+        /// <returns>List of all ecards </returns>
+        /// <param name="key">MD5 key required to access this API end point.</param>
+        // GET: api/EcardsData/List/{key}
+        // GET: api/EcardsData/{key}
         [HttpGet]
         [Route("api/ecardsdata/getecards")]
         [ResponseType(typeof(IEnumerable<EcardsDto>))]
@@ -26,6 +33,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             List<Ecards> Ecards = db.Ecards.ToList();
             List<EcardsDto> EcardsDtos = new List<EcardsDto> { };
 
+            //Here you can choose which information is exposed to the API
             foreach (var Ecard in Ecards)
             {
                 EcardsDto NewEcard = new EcardsDto
@@ -41,9 +49,16 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(EcardsDtos);
         }
 
+        /// <summary>
+        /// Finds a particular ecard in the database with a 200 status code. If the player is not found, return 404.
+        /// </summary>
+        /// <param name="id">The ecard id</param>
+        /// <returns>Information about the ecard, including ecard id, photo , message and departmentname</returns>
+        // <example>
+        // GET: api/EcardsData/FindEcard/{key}
         [HttpGet]
         [ResponseType(typeof(EcardsDto))]
-        public IHttpActionResult FindContact(int id)
+        public IHttpActionResult FindEcard(int id)
         {
             //Find the data
             Ecards ecard = db.Ecards.Find(id);
@@ -67,6 +82,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(EcardsDtos);
         }
 
+
+        /// <summary>
+        /// Finds a particular Department in the database given a contact id with a 200 status code. If the Department is not found, return 404.
+        /// </summary>
+        /// <param name="id">The ecard id</param>
+        /// <returns>Information about the Department, including Department id and Department Name</returns>
+        // <example>
+        // GET: api/DepartmentData/FindDepartmentForEcard/{key}
         [HttpGet]
         [ResponseType(typeof(DepartmentsDto))]
         public IHttpActionResult FindDepartmentForEcard(int id)
@@ -92,9 +115,19 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(DepartmentsDtos);
         }
 
-        // POST: api/EcardsData
+        /// <summary>
+        /// Updates an ecard in the database given information about the ecard.
+        /// </summary>
+        /// <param name="id">The ecard id</param>
+        /// <param name="player">A ecard object. Received as POST data.</param>
+        /// <returns></returns>
+        /// <example>
+        /// POST: api/EcardsData/UpdateEcard/{key}
+        /// FORM DATA: Ecard JSON Object
+        // PUT: api/EcardsData/UpdateEcard{key}
         [HttpPost]
         [Route("api/ecardsdata/updateecards")]
+        [Authorize(Roles = "Admin")]
         public IHttpActionResult UpdateEcard(int id, [FromBody] Ecards ecards)
         {
 
@@ -131,6 +164,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Adds an ecard to the database.
+        /// </summary>
+        /// <param name="player">An ecard object. Sent as POST form data.</param>
+        /// <returns>status code 200 if successful. 400 if unsuccessful</returns>
+        /// <example>
+        /// POST: api/EcardsData/AddEcard
+        ///  FORM DATA: Ecard JSON Object
         [ResponseType(typeof(Ecards))]
         [HttpPost]
         [Route("api/ecardsdata/addecard")]
@@ -149,6 +190,14 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             return Ok(ecard.ecard_id);
         }
 
+
+        /// <summary>
+        /// Deletes an ecard in the database
+        /// </summary>
+        /// <param name="id">The id of an ecard to delete.</param>
+        /// <returns>200 if successful. 404 if not successful.</returns>
+        /// <example>
+        /// POST: api/EcardsData/DeleteEcard/{key}
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public IHttpActionResult DeleteEcard(int id)
@@ -174,6 +223,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Finds a contact in the system. Internal use only.
+        /// </summary>
+        /// <param name="id">The contact id</param>
+        /// <returns>TRUE if the contact exists, false otherwise.</returns>
         private bool EcardsExists(int id)
         {
             return db.Ecards.Count(e => e.ecard_id == id) > 0;

@@ -33,9 +33,7 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
 
-
             //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ACCESS_TOKEN);
-
         }
         
         // GET: Donation
@@ -64,9 +62,31 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
         // GET: Donation/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            ShowDonation ViewModel = new ShowDonation();
+            string url = "donationdata/finddonation/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                //Put data into donation data transfer object
+                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
+                ViewModel.donation = SelectedDonation;
+
+
+                url = "donationdata/finddonorfordonation/" + id;
+                response = client.GetAsync(url).Result;
+                DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
+                ViewModel.donor = SelectedDonor;
+
+                return View(ViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
-/*
+
         // GET: Donation/Create
         public ActionResult Create()
         {
@@ -75,63 +95,121 @@ namespace Red_Lake_Hospital_Redesign_Team6.Controllers
 
         // POST: Donation/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        //authorized role needed
+        public ActionResult Create(Donation DonationInfo)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            Debug.WriteLine(DonationInfo.DonationId);
+            string url = "donationdata/adddonation";
+            Debug.WriteLine(jss.Serialize(DonationInfo));
+            HttpContent content = new StringContent(jss.Serialize(DonationInfo));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (response.IsSuccessStatusCode)
             {
-                return View();
+                int donationid = response.Content.ReadAsAsync<int>().Result;
+                return RedirectToAction("Details", new { id = donationid });
+            }
+            else
+            {
+                return RedirectToAction("Error");
             }
         }
-*/
-
+        
         // GET: Donation/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            UpdateDonation ViewModel = new UpdateDonation();
+
+            string url = "donationdata/finddonation/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                //Put data into donation data transfer object
+                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
+                ViewModel.donation = SelectedDonation;
+
+                //get information about donors which could make this donation.
+                url = "donordata/getdonors";
+                response = client.GetAsync(url).Result;
+                IEnumerable<DonorDto> PotentialDonors = response.Content.ReadAsAsync<IEnumerable<DonorDto>>().Result;
+                ViewModel.alldonors = PotentialDonors;
+
+                return View(ViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         // POST: Donation/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        //validate token goes here
+        public ActionResult Edit(int id, Donation DonationInfo)
         {
-            try
+            Debug.WriteLine(DonationInfo.DonationId);
+            string url = "donationdata/updatedontaion/" + id;
+            Debug.WriteLine(jss.Serialize(DonationInfo));
+            HttpContent content = new StringContent(jss.Serialize(DonationInfo));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = id });
             }
-            catch
+            else
             {
-                return View();
+                return RedirectToAction("Error");
             }
         }
-/*
+
         // GET: Donation/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteConfirm(int id)
         {
-            return View();
+            string url = "donationdata/finddonation/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                //Put data into player data transfer object
+                DonationDto SelectedDonation = response.Content.ReadAsAsync<DonationDto>().Result;
+                return View(SelectedDonation);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         // POST: Donation/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        //validate token
+        public ActionResult Delete(int id)
         {
-            try
+            string url = "donationdata/deletedonation/" + id;
+            //post body is empty
+            HttpContent content = new StringContent("");
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            //Can catch the status code (200 OK, 301 REDIRECT), etc.
+            //Debug.WriteLine(response.StatusCode);
+            if (response.IsSuccessStatusCode)
             {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
-            catch
+            else
             {
-                return View();
+                return RedirectToAction("Error");
             }
-        }*/
+        }
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }

@@ -22,5 +22,9 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models.ViewModels
         [DisplayName("Department")]
         [ForeignKey("Department")]
         public string DepartmentName { get; set; }
+
+        public IEnumerable<DepartmentsDto> alldepartments { get; set; }
+
+        public EcardsDto ecards { get; set; }
     }
 }

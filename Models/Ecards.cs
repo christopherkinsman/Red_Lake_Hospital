@@ -12,7 +12,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
     {
         [Key]
         public int ecard_id { get; set; }
+
+        
         public string photo_path { get; set; }
+
+        
         public string message { get; set; }
 
         [ForeignKey("Department")]
@@ -26,7 +30,11 @@ namespace Red_Lake_Hospital_Redesign_Team6.Models
     public class EcardsDto
     {
         public int ecard_id { get; set; }
+
+        
         public string photo_path { get; set; }
+
+        
         public string message { get; set; }
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
