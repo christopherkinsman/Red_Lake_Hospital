@@ -1,4 +1,4 @@
-# Red Lake Hospital Project - Team 6
+# Red Lake Hospital Project - Team 6 - Chris Testing
 
 - Admin Account: Usr: admin@admin.com Pass: Test123*
 - Regular User Account: Usr: user@user.com Pass: Test123*
